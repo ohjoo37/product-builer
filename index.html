@@ -21,33 +21,34 @@
       font-family: 'Gaegu', cursive, sans-serif;
     }
 
-    /* 다크모드 스타일 테마 */
+    /* 다크모드 스타일 테마 (고대비 가독성 강화) */
     body.dark-mode {
       background: linear-gradient(to bottom right, #090d16, #141124, #030712) !important;
-      color: #f1f5f9;
+      color: #f8fafc !important;
     }
     body.dark-mode .glass-dome-container {
-      background: linear-gradient(to bottom, rgba(30,41,59,0.5), rgba(15,23,42,0.3), rgba(30,41,59,0.7)) !important;
-      border-color: rgba(255,255,255,0.15) !important;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5) !important;
+      background: linear-gradient(to bottom, rgba(30,41,59,0.6), rgba(15,23,42,0.4), rgba(30,41,59,0.8)) !important;
+      border-color: rgba(255,255,255,0.2) !important;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6) !important;
     }
     body.dark-mode .modal-card-bg {
       background: linear-gradient(to bottom, #1e293b, #0f172a, #090d16) !important;
-      border-color: rgba(255,255,255,0.1) !important;
-      color: #f1f5f9 !important;
+      border-color: rgba(255,255,255,0.15) !important;
+      color: #f8fafc !important;
     }
     body.dark-mode .drawer-panel-bg {
       background-color: #0f172a !important;
-      color: #f1f5f9 !important;
-      border-color: rgba(255,255,255,0.1) !important;
+      color: #f8fafc !important;
+      border-color: rgba(255,255,255,0.15) !important;
     }
     body.dark-mode .sub-card-bg {
-      background-color: rgba(30, 41, 59, 0.7) !important;
-      border-color: rgba(51, 65, 85, 0.8) !important;
-      color: #e2e8f0 !important;
+      background-color: rgba(30, 41, 59, 0.9) !important;
+      border-color: rgba(71, 85, 105, 1) !important;
+      color: #f1f5f9 !important;
     }
-    body.dark-mode .text-custom-muted {
-      color: #94a3b8 !important;
+    body.dark-mode .text-slate-500,
+    body.dark-mode .text-slate-400 {
+      color: #cbd5e1 !important; /* 다크모드에서 흐린 글씨가 잘 보이도록 고대비 밝은 색상 적용 */
     }
 
     /* 3D 캡슐 구체 스타일링 */
@@ -127,7 +128,7 @@
       border-radius: 9999px;
     }
     body.dark-mode ::-webkit-scrollbar-thumb {
-      background: #334155;
+      background: #475569;
     }
   </style>
 </head>
@@ -145,18 +146,18 @@
       </div>
       <div>
         <h1 class="text-lg font-bold bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 bg-clip-text text-transparent">마음 캡슐 뽑기</h1>
-        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">따뜻한 위로와 지혜를 돌려보세요</p>
+        <p class="text-xs text-slate-500 font-medium">따뜻한 위로와 지혜를 돌려보세요</p>
       </div>
     </div>
 
     <!-- 우측 액션 버튼들 (다크모드 토글 + 내 보관함) -->
     <div class="flex items-center gap-2">
-      <button id="themeToggleBtn" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 hover:shadow transition-all active:scale-95" title="테마 전환">
+      <button id="themeToggleBtn" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 hover:shadow transition-all active:scale-95" title="테마 전환">
         <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
 
-      <button id="openBoxBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300 hover:shadow transition-all active:scale-95">
+      <button id="openBoxBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300 hover:shadow transition-all active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-500 dark:text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
         </svg>
@@ -253,7 +254,7 @@
   </main>
 
   <!-- 하단 팁 푸터 -->
-  <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-400 font-medium relative z-10">
+  <footer class="w-full text-center py-4 text-xs text-slate-500 font-medium relative z-10">
     <p>오늘 하루도 고생 많았어요. 마음에 드는 위로를 캡슐에서 찾아보세요 ✨</p>
   </footer>
 
@@ -296,7 +297,7 @@
           </svg>
           <span>오늘의 작은 미션</span>
         </div>
-        <p id="quoteActionPrompt" class="text-xs text-slate-600 dark:text-slate-300 leading-normal">
+        <p id="quoteActionPrompt" class="text-xs text-slate-600 dark:text-slate-200 leading-normal">
           창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
         </p>
       </div>
@@ -751,13 +752,13 @@
         if (!item) return;
 
         const card = document.createElement('div');
-        card.className = 'bg-rose-50/50 hover:bg-rose-50 dark:bg-slate-800/70 dark:hover:bg-slate-800 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 transition-all text-left relative group sub-card-bg';
+        card.className = 'bg-rose-50/50 hover:bg-rose-50 dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 transition-all text-left relative group sub-card-bg';
         card.innerHTML = `
           <div class="flex items-center justify-between mb-1.5">
             <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">
               ${item.category}
             </span>
-            <button class="copy-item-btn text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 p-1" title="복사하기">
+            <button class="copy-item-btn text-slate-400 hover:text-rose-500 dark:hover:text-rose-300 p-1" title="복사하기">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -767,7 +768,7 @@
           <p class="text-xs font-bold text-slate-800 dark:text-slate-100 leading-relaxed font-hand mb-1">
             "${item.quote}"
           </p>
-          <p class="text-[11px] text-slate-500 dark:text-slate-400">
+          <p class="text-[11px] text-slate-500 dark:text-slate-300">
             🌱 ${item.prompt}
           </p>
         `;
