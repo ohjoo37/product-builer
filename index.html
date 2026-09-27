@@ -32,9 +32,10 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.6) !important;
     }
     body.dark-mode .modal-card-bg {
-      background: linear-gradient(to bottom, #1e293b, #0f172a, #090d16) !important;
-      border-color: rgba(255,255,255,0.15) !important;
+      background: linear-gradient(to bottom, #1e293b, #0f172a, #020617) !important;
+      border-color: rgba(255,255,255,0.25) !important;
       color: #f8fafc !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
     }
     body.dark-mode .drawer-panel-bg {
       background-color: #0f172a !important;
@@ -42,9 +43,9 @@
       border-color: rgba(255,255,255,0.15) !important;
     }
     body.dark-mode .sub-card-bg {
-      background-color: rgba(30, 41, 59, 0.9) !important;
-      border-color: rgba(71, 85, 105, 1) !important;
-      color: #f1f5f9 !important;
+      background-color: rgba(30, 41, 59, 0.95) !important;
+      border-color: rgba(100, 116, 139, 1) !important;
+      color: #f8fafc !important;
     }
     body.dark-mode .text-slate-500,
     body.dark-mode .text-slate-400 {
@@ -278,33 +279,33 @@
       </div>
 
       <!-- 문구 카테고리 태그 -->
-      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-300">
+      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/80 text-pink-700 dark:text-pink-200">
         따뜻한 위로
       </div>
 
-      <!-- 메인 좋은 말 문구 -->
-      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 leading-relaxed font-hand mb-4 whitespace-pre-line px-2">
+      <!-- 메인 좋은 말 문구 (선명하고 큰 폰트) -->
+      <p id="quoteMainText" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug font-hand mb-4 whitespace-pre-line px-2">
         "힘든 날이 있으면 분명 쉬어가는 날도 있는 법이야."
       </p>
 
-      <!-- 실천 팁/생각할 거리 프롬프트 -->
-      <div class="w-full bg-white/80 rounded-2xl p-3.5 border border-rose-100/80 mb-5 text-left sub-card-bg">
-        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- 실천 팁/생각할 거리 프롬프트 (선명하고 가독성 높은 폰트) -->
+      <div class="w-full bg-white/90 rounded-2xl p-4 border border-rose-100 dark:border-slate-700 mb-5 text-left sub-card-bg shadow-sm">
+        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
           </svg>
-          <span>오늘의 작은 미션</span>
+          <span class="text-xs font-extrabold uppercase tracking-wide">오늘의 작은 미션</span>
         </div>
-        <p id="quoteActionPrompt" class="text-xs text-slate-600 dark:text-slate-200 leading-normal">
+        <p id="quoteActionPrompt" class="text-xs sm:text-sm text-slate-700 dark:text-slate-100 font-medium leading-relaxed">
           창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
         </p>
       </div>
 
       <!-- 버튼 액션 그룹 -->
       <div class="w-full flex gap-2">
-        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95">
+        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 shadow-xs">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
