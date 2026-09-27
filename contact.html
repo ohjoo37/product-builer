@@ -196,6 +196,35 @@
 
   </main>
 
+  <!-- Disqus 댓글 섹션 -->
+  <section class="w-full max-w-xl mx-auto px-4 py-6">
+    <div class="card-glass rounded-3xl p-5 sm:p-6 shadow-xl border border-rose-100 dark:border-slate-800">
+      <div class="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+        <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-slate-800 dark:text-slate-100">문의 및 소통 피드백</h3>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400">제휴 관련 공개 의견이나 문의 피드백을 남겨주세요 ✨</p>
+        </div>
+      </div>
+
+      <!-- Disqus Embed -->
+      <div id="disqus_thread"></div>
+      <script>
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
   <!-- 푸터 -->
   <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-400 font-medium">
     <p>© 마음 캡슐 뽑기 머신. Powered by Formspree.</p>
