@@ -15,9 +15,39 @@
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .font-hand {
       font-family: 'Gaegu', cursive, sans-serif;
+    }
+
+    /* 다크모드 스타일 테마 */
+    body.dark-mode {
+      background: linear-gradient(to bottom right, #090d16, #141124, #030712) !important;
+      color: #f1f5f9;
+    }
+    body.dark-mode .glass-dome-container {
+      background: linear-gradient(to bottom, rgba(30,41,59,0.5), rgba(15,23,42,0.3), rgba(30,41,59,0.7)) !important;
+      border-color: rgba(255,255,255,0.15) !important;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5) !important;
+    }
+    body.dark-mode .modal-card-bg {
+      background: linear-gradient(to bottom, #1e293b, #0f172a, #090d16) !important;
+      border-color: rgba(255,255,255,0.1) !important;
+      color: #f1f5f9 !important;
+    }
+    body.dark-mode .drawer-panel-bg {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: rgba(255,255,255,0.1) !important;
+    }
+    body.dark-mode .sub-card-bg {
+      background-color: rgba(30, 41, 59, 0.7) !important;
+      border-color: rgba(51, 65, 85, 0.8) !important;
+      color: #e2e8f0 !important;
+    }
+    body.dark-mode .text-custom-muted {
+      color: #94a3b8 !important;
     }
 
     /* 3D 캡슐 구체 스타일링 */
@@ -44,6 +74,9 @@
     /* 돔 유리 반사 효과 */
     .glass-reflection {
       background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.25) 100%);
+    }
+    body.dark-mode .glass-reflection {
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.08) 100%);
     }
 
     /* 캡슐 뒤섞이기 애니메이션 */
@@ -93,6 +126,9 @@
       background: #fbcfe8;
       border-radius: 9999px;
     }
+    body.dark-mode ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-amber-50 via-rose-50 to-indigo-100 min-h-screen text-slate-800 flex flex-col justify-between overflow-x-hidden">
@@ -109,18 +145,25 @@
       </div>
       <div>
         <h1 class="text-lg font-bold bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 bg-clip-text text-transparent">마음 캡슐 뽑기</h1>
-        <p class="text-xs text-slate-500 font-medium">따뜻한 위로와 지혜를 돌려보세요</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">따뜻한 위로와 지혜를 돌려보세요</p>
       </div>
     </div>
 
-    <!-- 우측 보관함 열기 버튼 -->
-    <button id="openBoxBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-white border border-rose-200 shadow-sm text-xs font-semibold text-rose-700 hover:shadow transition-all active:scale-95">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
-      </svg>
-      <span>내 보관함</span>
-      <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
-    </button>
+    <!-- 우측 액션 버튼들 (다크모드 토글 + 내 보관함) -->
+    <div class="flex items-center gap-2">
+      <button id="themeToggleBtn" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 hover:shadow transition-all active:scale-95" title="테마 전환">
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button id="openBoxBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300 hover:shadow transition-all active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-500 dark:text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+        </svg>
+        <span>내 보관함</span>
+        <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+      </button>
+    </div>
   </header>
 
   <!-- 메인 가챠 머신 구역 -->
@@ -138,10 +181,10 @@
       </div>
 
       <!-- 2. 투명 유리 돔 (캡슐 보관 공간 - 28개 캡슐로 꽉 찬 모습) -->
-      <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[48px] bg-gradient-to-b from-sky-50/40 via-white/20 to-sky-100/60 border-4 border-white/80 shadow-[0_15px_35px_rgba(244,114,182,0.25)] relative overflow-hidden backdrop-blur-xs flex items-center justify-center">
+      <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[48px] bg-gradient-to-b from-sky-50/40 via-white/20 to-sky-100/60 border-4 border-white/80 shadow-[0_15px_35px_rgba(244,114,182,0.25)] relative overflow-hidden backdrop-blur-xs flex items-center justify-center glass-dome-container">
         <!-- 유리 반사광 레이어 -->
         <div class="absolute inset-0 glass-reflection pointer-events-none z-20 rounded-[44px]"></div>
-        <div class="absolute top-4 left-6 w-12 h-20 bg-white/40 rounded-full rotate-[25deg] blur-xs pointer-events-none z-20"></div>
+        <div class="absolute top-4 left-6 w-12 h-20 bg-white/40 dark:bg-white/10 rounded-full rotate-[25deg] blur-xs pointer-events-none z-20"></div>
 
         <!-- 캡슐들이 담긴 내부 공간 (28개 밀집) -->
         <div id="capsuleChamber" class="w-full h-full relative z-10 p-2">
@@ -210,7 +253,7 @@
   </main>
 
   <!-- 하단 팁 푸터 -->
-  <footer class="w-full text-center py-4 text-xs text-slate-500 font-medium relative z-10">
+  <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-400 font-medium relative z-10">
     <p>오늘 하루도 고생 많았어요. 마음에 드는 위로를 캡슐에서 찾아보세요 ✨</p>
   </footer>
 
@@ -218,10 +261,10 @@
 
   <!-- 1. 캡슐 오픈 카드 모달 (결과 보기) -->
   <div id="quoteModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative">
+    <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative modal-card-bg">
       
       <!-- 닫기 버튼 -->
-      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -234,18 +277,18 @@
       </div>
 
       <!-- 문구 카테고리 태그 -->
-      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 text-pink-700">
+      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/60 text-pink-700 dark:text-pink-300">
         따뜻한 위로
       </div>
 
       <!-- 메인 좋은 말 문구 -->
-      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-800 leading-relaxed font-hand text-gray-800 mb-4 whitespace-pre-line px-2">
+      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100 leading-relaxed font-hand mb-4 whitespace-pre-line px-2">
         "힘든 날이 있으면 분명 쉬어가는 날도 있는 법이야."
       </p>
 
       <!-- 실천 팁/생각할 거리 프롬프트 -->
-      <div class="w-full bg-white/80 rounded-2xl p-3.5 border border-rose-100/80 mb-5 text-left">
-        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 mb-1">
+      <div class="w-full bg-white/80 rounded-2xl p-3.5 border border-rose-100/80 mb-5 text-left sub-card-bg">
+        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -253,14 +296,14 @@
           </svg>
           <span>오늘의 작은 미션</span>
         </div>
-        <p id="quoteActionPrompt" class="text-xs text-slate-600 leading-normal">
+        <p id="quoteActionPrompt" class="text-xs text-slate-600 dark:text-slate-300 leading-normal">
           창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
         </p>
       </div>
 
       <!-- 버튼 액션 그룹 -->
       <div class="w-full flex gap-2">
-        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95">
+        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -268,7 +311,7 @@
           <span id="copyBtnText">글귀 복사하기</span>
         </button>
 
-        <button id="drawAgainBtn" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white rounded-xl text-xs font-bold shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 transition-all active:scale-95">
+        <button id="drawAgainBtn" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white rounded-xl text-xs font-bold shadow-md shadow-rose-200 dark:shadow-none flex items-center justify-center gap-1.5 transition-all active:scale-95">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="1 4 1 10 7 10"></polyline>
             <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
@@ -282,23 +325,23 @@
 
   <!-- 2. 모은 좋은 말 보관함 드로어 (우측 사이드 패널) -->
   <div id="drawerOverlay" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300">
-    <div id="drawerPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-5 flex flex-col transform translate-x-full transition-transform duration-300 ease-out">
+    <div id="drawerPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-5 flex flex-col transform translate-x-full transition-transform duration-300 ease-out drawer-panel-bg">
       
       <!-- 보관함 헤더 -->
-      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center">
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
             </svg>
           </div>
           <div>
-            <h2 class="text-base font-bold text-slate-800">내가 모은 마음 캡슐</h2>
+            <h2 class="text-base font-bold text-slate-800 dark:text-slate-100">내가 모은 마음 캡슐</h2>
             <p id="drawerProgressText" class="text-xs text-slate-400">총 0개의 좋은 말을 모았어요</p>
           </div>
         </div>
 
-        <button id="closeBoxBtn" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors">
+        <button id="closeBoxBtn" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -308,11 +351,11 @@
 
       <!-- 도감 수집률 게이지 바 -->
       <div class="py-3">
-        <div class="flex justify-between text-xs text-slate-500 font-semibold mb-1">
+        <div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">
           <span>문구 수집률</span>
           <span id="collectionPercent">0%</span>
         </div>
-        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+        <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
           <div id="collectionProgressBar" class="h-full bg-gradient-to-r from-pink-500 to-rose-500 w-0 transition-all duration-500"></div>
         </div>
       </div>
@@ -323,8 +366,8 @@
       </div>
 
       <!-- 하단 비우기 / 닫기 액션 -->
-      <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-        <button id="clearStorageBtn" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <button id="clearStorageBtn" class="text-xs text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 underline font-medium">
           보관함 초기화
         </button>
         <span class="text-[11px] text-slate-400">브라우저에 자동 보관됩니다</span>
@@ -334,7 +377,7 @@
   </div>
 
   <!-- 토스트 알림 메시지 -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1.5">
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 dark:bg-slate-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1.5 border border-slate-700">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
@@ -497,34 +540,65 @@
     const collectionProgressBar = document.getElementById('collectionProgressBar');
     const clearStorageBtn = document.getElementById('clearStorageBtn');
 
+    // 테마 토글 관련
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
     let isOperating = false;
     let droppedCapsuleElem = null;
     let currentQuote = null;
     let currentPalette = null;
     let leverRotation = 0;
 
-    // 로컬 스토리지에 저장된 문구 ID 목록
     let collectedQuoteIds = JSON.parse(localStorage.getItem('collected_quotes_ids') || '[]');
 
     /* -----------------------------------------------------------
-     * 4. 가챠 머신 내부 캡슐 28개 빽빽하게 렌더링
+     * 4. 다크모드 / 화이트모드 토글 로직
+     * ----------------------------------------------------------- */
+    function setTheme(isDark) {
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = !document.body.classList.contains('dark-mode');
+      setTheme(isDark);
+    });
+
+    // 초기 테마 로드
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setTheme(true);
+    } else {
+      setTheme(false);
+    }
+
+    /* -----------------------------------------------------------
+     * 5. 가챠 머신 내부 캡슐 28개 빽빽하게 렌더링
      * ----------------------------------------------------------- */
     function populateChamber() {
       chamber.innerHTML = '';
-      const totalCapsules = 28; // 캡슐 개수를 풍성하게 채움
+      const totalCapsules = 28;
 
-      // 돔 내부 원형 경계 안쪽에 자연스럽게 겹치도록 좌표 배치
       for (let i = 0; i < totalCapsules; i++) {
         const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
         const el = document.createElement('div');
         el.className = 'capsule-ball';
 
-        // 크기 약간의 베리에이션 (38px ~ 46px)
         const size = 38 + (i % 5) * 2;
         el.style.width = `${size}px`;
         el.style.height = `${size}px`;
 
-        // 돔 내부 바닥과 중앙에 몰리도록 분포
         const angle = (i / totalCapsules) * Math.PI * 2 + (Math.random() * 0.4);
         const radius = 30 + Math.random() * 65; 
         const centerX = 125;
@@ -536,12 +610,11 @@
         el.style.left = `${posX}px`;
         el.style.top = `${posY}px`;
         el.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
-        el.style.zIndex = Math.floor(posY); // 아래쪽일수록 앞 레이어
+        el.style.zIndex = Math.floor(posY);
 
-        // 반구 상단/하단
         el.innerHTML = `
           <div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${pal.top}"></div>
-          <div class="w-full h-1/2 rounded-b-full bg-slate-50 border-t border-black/10"></div>
+          <div class="w-full h-1/2 rounded-b-full bg-slate-50 dark:bg-slate-200 border-t border-black/10"></div>
           <div class="capsule-seam"></div>
           <div class="absolute top-1.5 left-2 w-2 h-3 bg-white/60 rounded-full blur-[0.5px]"></div>
         `;
@@ -550,7 +623,7 @@
     }
 
     /* -----------------------------------------------------------
-     * 5. 레버 작동 & 캡슐 추첨 및 투하
+     * 6. 레버 작동 & 캡슐 추첨 및 투하
      * ----------------------------------------------------------- */
     function operateGacha() {
       if (isOperating) return;
@@ -563,15 +636,12 @@
       isOperating = true;
       sound.playCrank();
 
-      // 1. 레버 360도 회전
       leverRotation += 360;
       lever.style.transform = `rotate(${leverRotation}deg)`;
 
-      // 2. 돔 안의 캡슐들이 와르르 뒤섞임
       const capsules = chamber.querySelectorAll('.capsule-ball');
       capsules.forEach(cap => cap.classList.add('tumbling'));
 
-      // 3. 0.8초 후 레버 정지 & 배출구로 캡슐 투하
       setTimeout(() => {
         capsules.forEach(cap => cap.classList.remove('tumbling'));
         dropCapsuleToSlot();
@@ -579,12 +649,10 @@
       }, 750);
     }
 
-    // 캡슐이 쏙 떨어지는 로직
     function dropCapsuleToSlot() {
       sound.playDrop();
       emptySlotGuide.style.display = 'none';
 
-      // 랜덤 캡슐 및 명언 선정
       currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
       currentQuote = QUOTES_DB[Math.floor(Math.random() * QUOTES_DB.length)];
 
@@ -593,7 +661,7 @@
       capsule.title = "터치해서 좋은 말 열어보기!";
       capsule.innerHTML = `
         <div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${currentPalette.top}"></div>
-        <div class="w-full h-1/2 rounded-b-full bg-slate-50 border-t border-black/15"></div>
+        <div class="w-full h-1/2 rounded-b-full bg-slate-50 dark:bg-slate-200 border-t border-black/15"></div>
         <div class="capsule-seam"></div>
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span class="text-xs">✨</span>
@@ -607,43 +675,37 @@
       showToast("캡슐이 나왔어요! 캡슐을 눌러 열어보세요 🎁");
     }
 
-    // 투하된 캡슐 오픈
     function openDroppedCapsule() {
       if (!currentQuote) return;
       sound.playPop();
 
-      // 화려한 꽃가루 컨페티 폭죽
       confetti({
         particleCount: 50,
         spread: 60,
         origin: { y: 0.65 }
       });
 
-      // 수집 목록에 기록
       if (!collectedQuoteIds.includes(currentQuote.id)) {
         collectedQuoteIds.push(currentQuote.id);
         localStorage.setItem('collected_quotes_ids', JSON.stringify(collectedQuoteIds));
         updateCollectedUI();
       }
 
-      // 모달에 내용 채우기
       quoteCategoryTag.textContent = currentQuote.category;
       quoteMainText.textContent = `"${currentQuote.quote}"`;
       quoteActionPrompt.textContent = currentQuote.prompt;
 
       modalCapsuleGraphic.className = `w-16 h-16 rounded-full mb-3 shadow-lg flex items-center justify-center relative bg-gradient-to-br ${currentPalette.top} text-white`;
       modalCapsuleGraphic.innerHTML = `
-        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-white rounded-b-full border-t border-black/10"></div>
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-white dark:bg-slate-200 rounded-b-full border-t border-black/10"></div>
         <div class="capsule-seam"></div>
         <span class="relative z-10 text-2xl">💖</span>
       `;
 
-      // 모달 표시
       quoteModal.classList.remove('opacity-0', 'pointer-events-none');
       quoteModalCard.classList.remove('scale-90');
       quoteModalCard.classList.add('scale-100');
 
-      // 바닥 슬롯 비우기
       if (droppedCapsuleElem) {
         droppedCapsuleElem.remove();
         droppedCapsuleElem = null;
@@ -659,7 +721,7 @@
     }
 
     /* -----------------------------------------------------------
-     * 6. 보관함(도감) 관리 및 UI 렌더링
+     * 7. 보관함(도감) 관리 및 UI 렌더링
      * ----------------------------------------------------------- */
     function updateCollectedUI() {
       const count = collectedQuoteIds.length;
@@ -671,11 +733,10 @@
       collectionPercent.textContent = `${percentage}%`;
       collectionProgressBar.style.width = `${percentage}%`;
 
-      // 보관함 리스트 렌더링
       if (count === 0) {
         collectedList.innerHTML = `
           <div class="h-64 flex flex-col items-center justify-center text-center text-slate-400">
-            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-2xl mb-2">🎁</div>
+            <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-2xl mb-2">🎁</div>
             <p class="text-xs font-semibold">아직 보관된 캡슐이 없어요.</p>
             <p class="text-[11px] text-slate-400 mt-1">가챠 레버를 돌려 첫 번째 캡슐을 열어보세요!</p>
           </div>
@@ -684,30 +745,29 @@
       }
 
       collectedList.innerHTML = '';
-      // 최근 모은 순서대로 역순 정렬
       const reversedIds = [...collectedQuoteIds].reverse();
       reversedIds.forEach(id => {
         const item = QUOTES_DB.find(q => q.id === id);
         if (!item) return;
 
         const card = document.createElement('div');
-        card.className = 'bg-rose-50/50 hover:bg-rose-50 border border-rose-100 rounded-2xl p-3.5 transition-all text-left relative group';
+        card.className = 'bg-rose-50/50 hover:bg-rose-50 dark:bg-slate-800/70 dark:hover:bg-slate-800 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 transition-all text-left relative group sub-card-bg';
         card.innerHTML = `
           <div class="flex items-center justify-between mb-1.5">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white text-rose-600 border border-rose-200">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">
               ${item.category}
             </span>
-            <button class="copy-item-btn text-slate-400 hover:text-rose-500 p-1" title="복사하기">
+            <button class="copy-item-btn text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 p-1" title="복사하기">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
             </button>
           </div>
-          <p class="text-xs font-bold text-slate-800 leading-relaxed font-hand mb-1">
+          <p class="text-xs font-bold text-slate-800 dark:text-slate-100 leading-relaxed font-hand mb-1">
             "${item.quote}"
           </p>
-          <p class="text-[11px] text-slate-500">
+          <p class="text-[11px] text-slate-500 dark:text-slate-400">
             🌱 ${item.prompt}
           </p>
         `;
@@ -722,7 +782,6 @@
       });
     }
 
-    // 토스트 팝업 표시
     let toastTimer = null;
     function showToast(msg) {
       toastMessage.textContent = msg;
@@ -734,19 +793,16 @@
     }
 
     /* -----------------------------------------------------------
-     * 7. 이벤트 바인딩
+     * 8. 이벤트 바인딩
      * ----------------------------------------------------------- */
-    // 레버 클릭/탭
     lever.addEventListener('click', operateGacha);
 
-    // 모달 제어
     closeModalBtn.addEventListener('click', closeModal);
     drawAgainBtn.addEventListener('click', () => {
       closeModal();
       setTimeout(operateGacha, 250);
     });
 
-    // 클립보드 복사
     copyQuoteBtn.addEventListener('click', () => {
       if (!currentQuote) return;
       const textToCopy = `[오늘의 마음 캡슐]\n"${currentQuote.quote}"\n\n🌱 ${currentQuote.prompt}`;
@@ -759,7 +815,6 @@
       });
     });
 
-    // 보관함 드로어 열기 / 닫기
     openBoxBtn.addEventListener('click', () => {
       drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
       drawerPanel.classList.remove('translate-x-full');
@@ -773,7 +828,6 @@
       if (e.target === drawerOverlay) closeDrawer();
     });
 
-    // 보관함 비우기
     clearStorageBtn.addEventListener('click', () => {
       if (confirm("모아둔 좋은 말 캡슐을 모두 초기화할까요?")) {
         collectedQuoteIds = [];
@@ -783,7 +837,6 @@
       }
     });
 
-    // ESC 키로 모달 닫기
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeModal();
@@ -791,7 +844,6 @@
       }
     });
 
-    // 초기 실행
     window.addEventListener('DOMContentLoaded', () => {
       populateChamber();
       updateCollectedUI();
