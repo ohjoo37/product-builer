@@ -1,3 +1,4018 @@
+
+Gemini
+
+채팅
+
+Spark
+베타
+새 채팅
+채팅 검색
+학생
+이미지
+동영상
+라이브러리
+새 노트북
+디소 저서 목차 작업
+online information generating & sharing
+모든 노트북
+HTML 코드 내 애드센스 구현 여부 확인
+코드 내 게임 포함 여부 확인
+웹 기술 관련 직독직해 번역
+이용충족이론의 동기와 목적 차이
+업무 메일 초안 교정
+영어 소설 문장 번역 제안
+생성형 AI 선행연구 검토 첨삭
+IT프로젝트 빌더
+GitHub Codespaces와 Firebase 사용법
+워드 파일 읽기 가능 여부
+Project IDX 종료에 따른 대안 환경 설정
+AI 녹취록 문맥 교정 및 수정
+70대 PSA 수치와 전립선 건강 설명
+생성형 AI와 학습효능감 연구 Abstract 번역
+미디어 이용 이유와 목적의 차이
+논문 리딩 및 직독직해 코칭
+스웨덴 풍경 문장 번역
+MD 파일의 개념과 특징
+논문 제목 제안 및 피드백
+안네마리 문장 번역 분석
+연령·교육 정보격차의 구조적 분석
+Stata esttab 명령어 에러 해결법
+회귀분석 상호작용효과 해석
+소프트웨어정책연구소의 사회학 전공자 채용 이유
+사회학과 자기소개서 진솔하고 전문적인 수정
+식도 이물감 원인과 대처법
+저널 트랜스퍼 후 수정 및 제출 절차
+Conger 가족 스트레스 모델 핵심 내용
+심리학 논문 영한 번역
+부부 쌍 자료(APIM) 분석 방법론
+단일 문항을 활용한 구조방정식 모형 분석
+미레나와 유방 미세석회화 관계
+여성정책연구원 부연구위원 지원서 작성
+소셜 미디어와 젠더 갈등 인식 번역
+Gemini와의 대화
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>힐링 아케이드 | 마음 캡슐 & 자존감 픽업 머신</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+
+    tailwind.config = {
+
+      darkMode: 'class',
+
+    }
+
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Nanum+Myeongjo:wght@700;800&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+  <style>
+
+    body {
+
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+      user-select: none;
+
+      -webkit-tap-highlight-color: transparent;
+
+      transition: background 0.3s ease, color 0.3s ease;
+
+    }
+
+    .font-serif-quote {
+
+      font-family: 'Nanum Myeongjo', serif;
+
+    }
+
+    .font-hand {
+
+      font-family: 'Gaegu', cursive, sans-serif;
+
+    }
+
+
+
+    /* 다크모드 테마 (가독성 고대비) */
+
+    body.dark-mode, html.dark body {
+
+      background: linear-gradient(to bottom right, #090d16, #141124, #030712) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+    body.dark-mode .glass-dome-container, html.dark .glass-dome-container {
+
+      background: linear-gradient(to bottom, rgba(30,41,59,0.6), rgba(15,23,42,0.4), rgba(30,41,59,0.8)) !important;
+
+      border-color: rgba(255,255,255,0.2) !important;
+
+    }
+
+    body.dark-mode .modal-card-bg, html.dark .modal-card-bg {
+
+      background: linear-gradient(to bottom, #1e293b, #0f172a, #020617) !important;
+
+      border-color: rgba(255,255,255,0.25) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+    body.dark-mode .drawer-panel-bg, html.dark .drawer-panel-bg {
+
+      background-color: #0f172a !important;
+
+      color: #f8fafc !important;
+
+      border-color: rgba(255,255,255,0.15) !important;
+
+    }
+
+    body.dark-mode .sub-card-bg, html.dark .sub-card-bg {
+
+      background-color: rgba(30, 41, 59, 0.95) !important;
+
+      border-color: rgba(100, 116, 139, 1) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+
+
+    /* 3D 캡슐 볼 스타일 */
+
+    .capsule-ball, .self-ball {
+
+      border-radius: 50%;
+
+      position: absolute;
+
+      box-shadow: inset -4px -4px 8px rgba(0,0,0,0.35),
+
+                  inset 4px 4px 8px rgba(255,255,255,0.7),
+
+                  0 6px 12px rgba(0,0,0,0.22);
+
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    }
+
+    .capsule-seam {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 2px;
+
+      background: rgba(0,0,0,0.2);
+
+      box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+
+      transform: translateY(-50%);
+
+    }
+
+
+
+    /* 유리 반사 효과 */
+
+    .glass-reflection {
+
+      background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.25) 100%);
+
+    }
+
+    body.dark-mode .glass-reflection, html.dark .glass-reflection {
+
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.08) 100%);
+
+    }
+
+
+
+    /* 애니메이션들 */
+
+    @keyframes tumbleMix {
+
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+
+      20% { transform: translate(-10px, -24px) rotate(45deg) scale(1.05); }
+
+      40% { transform: translate(12px, -36px) rotate(-60deg) scale(0.95); }
+
+      60% { transform: translate(-14px, -18px) rotate(90deg) scale(1.03); }
+
+      80% { transform: translate(8px, -28px) rotate(-40deg) scale(1.01); }
+
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+
+    }
+
+    .tumbling {
+
+      animation: tumbleMix 0.55s ease-in-out infinite alternate;
+
+    }
+
+
+
+    @keyframes dropBounce {
+
+      0% { transform: translateY(-70px) scale(0.6); opacity: 0; }
+
+      50% { transform: translateY(10px) scale(1.1); opacity: 1; }
+
+      70% { transform: translateY(-8px) scale(0.95); }
+
+      85% { transform: translateY(4px) scale(1.02); }
+
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+
+    }
+
+    .animate-drop-bounce {
+
+      animation: dropBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+    }
+
+
+
+    @keyframes pulseGlow {
+
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.6)); }
+
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(255, 105, 180, 0.9)); }
+
+    }
+
+    .pulse-touch {
+
+      animation: pulseGlow 1.2s infinite ease-in-out;
+
+    }
+
+
+
+    /* UFO 크레인 갈퀴 스타일 */
+
+    .claw-arm-left {
+
+      transform-origin: top right;
+
+      transition: transform 0.25s ease-in-out;
+
+    }
+
+    .claw-arm-right {
+
+      transform-origin: top left;
+
+      transition: transform 0.25s ease-in-out;
+
+    }
+
+    .claw-closed .claw-arm-left {
+
+      transform: rotate(26deg);
+
+    }
+
+    .claw-closed .claw-arm-right {
+
+      transform: rotate(-26deg);
+
+    }
+
+
+
+    .neon-border {
+
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.4), inset 0 0 15px rgba(244, 63, 94, 0.2);
+
+    }
+
+    .neon-light {
+
+      box-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48;
+
+    }
+
+
+
+    @keyframes prizePulse {
+
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #fb7185); }
+
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px #f43f5e); }
+
+    }
+
+    .prize-pulse {
+
+      animation: prizePulse 1.1s infinite ease-in-out;
+
+    }
+
+  </style>
+
+</head>
+
+<body class="bg-gradient-to-br from-amber-50 via-rose-50 to-indigo-100 min-h-screen text-slate-800 dark:text-slate-100 flex flex-col justify-between overflow-x-hidden">
+
+
+
+  <!-- 상단 네비게이션 헤더 -->
+
+  <header class="w-full max-w-6xl mx-auto px-4 pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between z-20 gap-3">
+
+    <div class="flex items-center gap-2.5">
+
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-md shadow-pink-200">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+          <circle cx="12" cy="12" r="10"></circle>
+
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+
+          <path d="M2 12h20"></path>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h1 class="text-base sm:text-lg font-bold bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 dark:from-pink-400 dark:via-rose-400 dark:to-purple-400 bg-clip-text text-transparent">힐링 아케이드</h1>
+
+        <p class="text-[11px] text-slate-500 dark:text-slate-300 font-medium">따뜻한 위로와 자존감 픽업 머신</p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 머신 선택 탭 버튼들 -->
+
+    <div class="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 p-1 rounded-2xl border border-rose-200 dark:border-slate-800 shadow-sm">
+
+      <button id="tabGacha" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs">
+
+        💊 마음 캡슐 뽑기
+
+      </button>
+
+      <button id="tabClaw" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500">
+
+        🕹️ 자존감 픽업 머신
+
+      </button>
+
+    </div>
+
+
+
+    <!-- 우측 액션 버튼들 (다크모드 + 보관함 + 제휴 문의) -->
+
+    <div class="flex items-center gap-1.5">
+
+      <button id="themeToggleBtn" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 transition-all" title="테마 전환">
+
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+
+      </button>
+
+
+
+      <button id="openBoxBtn" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+
+        <span>보관함</span>
+
+        <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+
+      </button>
+
+
+
+      <a href="contact.html" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white shadow-sm text-xs font-semibold" title="제휴 및 협업 문의">
+
+        <span>제휴 문의</span>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================== 메인 아케이드 & 댓글 섹션 컨테이너 ==================== -->
+
+  <main class="w-full max-w-6xl mx-auto px-4 py-4 flex-1 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-8 z-10">
+
+
+
+    <!-- 좌측: 뽑기 머신 영역 (마음 캡슐 가챠 & 자존감 픽업 머신) -->
+
+    <div class="w-full lg:flex-1 flex flex-col items-center justify-center lg:sticky lg:top-4">
+
+
+
+      <!-- ==================== 게임 뷰 1: 마음 캡슐 뽑기 머신 ==================== -->
+
+      <div id="viewGacha" class="w-full flex flex-col items-center justify-center">
+
+        <div class="w-full max-w-sm mx-auto px-4 py-2 flex flex-col items-center justify-center relative">
+
+          <div class="w-full flex flex-col items-center">
+
+            <!-- 뚜껑 -->
+
+            <div class="w-56 h-7 bg-gradient-to-b from-rose-500 to-rose-600 rounded-t-3xl shadow-lg border-b-2 border-rose-700/30 flex items-center justify-center relative">
+
+              <div class="w-16 h-1.5 bg-rose-300/40 rounded-full"></div>
+
+              <div class="absolute -top-3 w-7 h-7 bg-gradient-to-br from-yellow-300 to-amber-500 rounded-full border-2 border-white shadow-md flex items-center justify-center">
+
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+
+              </div>
+
+            </div>
+
+            <!-- 돔 유리 -->
+
+            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[48px] bg-gradient-to-b from-sky-50/40 via-white/20 to-sky-100/60 border-4 border-white/80 shadow-[0_15px_35px_rgba(244,114,182,0.25)] relative overflow-hidden backdrop-blur-xs flex items-center justify-center glass-dome-container">
+
+              <div class="absolute inset-0 glass-reflection pointer-events-none z-20 rounded-[44px]"></div>
+
+              <div id="capsuleChamber" class="w-full h-full relative z-10 p-2"></div>
+
+            </div>
+
+            <!-- 머신 베이스 -->
+
+            <div class="w-72 sm:w-80 bg-gradient-to-b from-rose-500 via-rose-500 to-rose-600 rounded-3xl shadow-2xl p-4 flex flex-col items-center -mt-4 z-30 border-4 border-rose-400 relative">
+
+              <div class="w-full flex justify-between items-center px-4 mb-2">
+
+                <div class="flex items-center gap-1 bg-rose-700/40 px-2.5 py-0.5 rounded-full border border-rose-300/20 text-[11px] text-rose-100 font-medium">
+
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+
+                  무한 가챠 가동 중
+
+                </div>
+
+                <div class="w-7 h-2 bg-rose-900/60 rounded-full border border-rose-400/40 shadow-inner"></div>
+
+              </div>
+
+              <!-- 레버 -->
+
+              <div class="w-28 h-28 rounded-full bg-gradient-to-br from-rose-700 via-rose-800 to-rose-900 border-4 border-rose-300/60 shadow-[inset_0_4px_8px_rgba(0,0,0,0.6)] flex items-center justify-center relative my-1">
+
+                <div id="leverControl" class="w-full h-full flex items-center justify-center cursor-pointer transition-transform duration-500 hover:scale-105 active:scale-95 group">
+
+                  <div class="w-20 h-5 bg-gradient-to-r from-slate-200 via-white to-slate-300 rounded-full shadow-md flex items-center justify-between px-1 border border-slate-300">
+
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+
+                    <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-slate-400 via-slate-100 to-slate-400 border-2 border-slate-500 flex items-center justify-center shadow-inner">
+
+                      <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+
+                    </div>
+
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-center gap-1.5 mt-2 text-rose-100 text-xs font-semibold animate-bounce">
+
+                <span>레버를 탭하거나 클릭하여 돌려보세요!</span>
+
+              </div>
+
+              <!-- 배출구 -->
+
+              <div class="w-48 h-20 bg-rose-950/80 rounded-2xl mt-3 p-1.5 shadow-[inset_0_8px_16px_rgba(0,0,0,0.7)] border-2 border-rose-800 flex items-center justify-center relative overflow-hidden">
+
+                <div id="dropSlot" class="w-full h-full flex items-center justify-center relative">
+
+                  <span id="emptySlotGuide" class="text-[11px] text-rose-300/60 font-medium">여기 캡슐이 나와요</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="w-60 h-3 bg-gradient-to-r from-rose-900 via-rose-800 to-rose-900 rounded-b-xl shadow-lg -mt-0.5"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==================== 게임 뷰 2: 자존감 픽업 머신 (UFO 크레인) ==================== -->
+
+      <div id="viewClaw" class="w-full flex flex-col items-center justify-center hidden">
+
+        <div class="w-full max-w-md mx-auto px-4 py-2 flex flex-col items-center justify-center">
+
+          <div class="w-full bg-gradient-to-b from-slate-900 via-rose-950/60 to-slate-900 rounded-3xl border-2 border-rose-500/40 p-3 shadow-2xl neon-border flex flex-col items-center relative">
+
+            <div class="w-full flex justify-between items-center px-4 py-1.5 mb-2 bg-slate-950/80 rounded-xl border border-rose-500/30">
+
+              <div class="flex items-center gap-2">
+
+                <div class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></div>
+
+                <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">Self-Esteem Catch</span>
+
+              </div>
+
+              <div class="flex gap-1 text-[11px] font-mono text-amber-300">
+
+                <span>CREDIT:</span>
+
+                <span class="font-bold">∞ FREE</span>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- 크레인 아레나 -->
+
+            <div id="craneArena" class="w-full h-80 rounded-2xl bg-gradient-to-b from-slate-950 via-slate-900 to-indigo-950/70 border border-slate-700/80 relative overflow-hidden shadow-inner">
+
+              <div class="absolute inset-0 glass-glare pointer-events-none z-30"></div>
+
+              <div class="absolute top-2 left-3 right-3 h-2 bg-slate-700 rounded-full border border-slate-600 shadow-inner z-10">
+
+                <div class="w-full h-0.5 bg-rose-400/40 mt-0.5"></div>
+
+              </div>
+
+              <!-- 크레인 트롤리 -->
+
+              <div id="craneTrolley" class="absolute top-1 left-1/2 -translate-x-1/2 z-20 transition-all duration-75 flex flex-col items-center pointer-events-none" style="transform: translateX(-50%);">
+
+                <div class="w-10 h-3 bg-gradient-to-b from-amber-400 to-amber-600 rounded-md border border-amber-300 shadow"></div>
+
+                <div id="craneWire" class="w-1 bg-slate-300 h-6 transition-all duration-300 shadow-sm"></div>
+
+                <div class="w-8 h-6 bg-gradient-to-b from-rose-500 to-rose-700 rounded-t-lg rounded-b-sm border border-rose-300 shadow-md flex items-center justify-center relative">
+
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-300 border border-white"></div>
+
+                  <div id="clawBallMount" class="absolute top-7 left-1/2 -translate-x-1/2"></div>
+
+                </div>
+
+                <div id="clawMechanism" class="relative w-12 h-6 flex justify-between px-1">
+
+                  <div class="claw-arm-left w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-right rotate-12"></div>
+
+                  <div class="w-1 h-3 bg-slate-400 mt-1"></div>
+
+                  <div class="claw-arm-right w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-left -rotate-12"></div>
+
+                </div>
+
+              </div>
+
+              <!-- 배출구 슈트 -->
+
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-black via-slate-950 to-slate-900 border-t-2 border-r-2 border-rose-500/40 rounded-tr-3xl z-10 p-1 flex items-center justify-center">
+
+                <div class="w-full h-full border border-dashed border-rose-400/40 rounded-tr-2xl flex flex-col items-center justify-center text-center p-1 bg-black/40">
+
+                  <span class="text-[10px] text-rose-300 font-bold">배출구</span>
+
+                  <span class="text-[9px] text-slate-500">PRIZE EXIT</span>
+
+                </div>
+
+              </div>
+
+              <!-- 볼 필드 -->
+
+              <div id="ballField" class="absolute inset-0 pointer-events-none z-10"></div>
+
+            </div>
+
+
+
+            <!-- 크레인 컨트롤러 -->
+
+            <div class="w-full bg-slate-900/90 rounded-2xl p-4 mt-3 border border-slate-700/80 shadow-inner flex flex-col gap-3">
+
+              <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-2">
+
+                  <button id="btnLeft" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">◀</button>
+
+                  <div class="flex flex-col items-center px-1">
+
+                    <div class="w-3 h-8 bg-slate-700 rounded-full flex items-start justify-center p-0.5">
+
+                      <div id="joystickKnob" class="w-5 h-5 rounded-full bg-rose-500 shadow-md border border-rose-300 transition-transform"></div>
+
+                    </div>
+
+                    <span class="text-[10px] text-slate-400 mt-1 font-semibold">이동</span>
+
+                  </div>
+
+                  <button id="btnRight" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">▶</button>
+
+                </div>
+
+                <div class="flex flex-col items-center">
+
+                  <button id="btnCatch" class="w-24 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 active:scale-95 border-2 border-rose-300 text-white font-extrabold text-sm tracking-wider shadow-lg flex flex-col items-center justify-center neon-light">
+
+                    <span>GRAB!</span>
+
+                    <span class="text-[10px] opacity-80 font-normal">볼 집기</span>
+
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="w-full bg-slate-950 rounded-xl p-2.5 border border-slate-800 flex items-center justify-between">
+
+                <div class="flex items-center gap-2">
+
+                  <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+
+                  <span class="text-xs text-slate-300 font-medium">당첨 배출구:</span>
+
+                </div>
+
+                <div id="prizeDropPocket" class="h-11 flex-1 flex items-center justify-end px-3">
+
+                  <span id="pocketPlaceholder" class="text-xs text-slate-500 italic">집게로 볼을 뽑아보세요!</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <!-- 우측: Disqus 댓글 섹션 -->
+
+    <section class="w-full lg:w-[460px] xl:w-[500px] shrink-0">
+
+      <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-5 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
+
+        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-sm font-bold text-slate-800 dark:text-slate-100">방문자 한줄평 및 소통 공간</h3>
+
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">따뜻한 응원의 한마디나 의견을 자유롭게 남겨주세요 ✨</p>
+
+          </div>
+
+        </div>
+
+        <div id="disqus_thread"></div>
+
+        <script>
+
+            (function() {
+
+            var d = document, s = d.createElement('script');
+
+            s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+
+            (d.head || d.body).appendChild(s);
+
+            })();
+
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-300 font-medium z-10">
+
+    오늘 하루도 고생 많았어요. 힐링 아케이드에서 따뜻함을 충전하세요 ✨
+
+  </footer>
+
+
+
+  <!-- ==================== 결과 모달 (캡슐 & 클레인 공용) ==================== -->
+
+  <div id="quoteModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative modal-card-bg">
+
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+      </button>
+
+
+
+      <div id="modalCapsuleGraphic" class="w-16 h-16 rounded-full mb-4 shadow-lg flex items-center justify-center relative text-2xl">💌</div>
+
+      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/80 text-pink-700 dark:text-pink-200">따뜻한 위로</div>
+
+
+
+      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-serif-quote mb-3 whitespace-pre-line px-2">
+
+        "힘든 날이 있으면 분명 쉬어가는 날도 있는 법이야."
+
+      </p>
+
+      <div id="sourceWrapper" class="text-xs text-amber-600 dark:text-amber-300 font-semibold mb-3 hidden">
+
+        — <span id="quoteSourceText">출처</span>
+
+      </div>
+
+
+
+      <div class="w-full bg-white/90 rounded-2xl p-4 border border-rose-100 dark:border-slate-700 mb-5 text-left sub-card-bg shadow-sm">
+
+        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1.5">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+          <span class="text-xs font-extrabold uppercase tracking-wide">오늘의 미션 / 힐링 팁</span>
+
+        </div>
+
+        <p id="quoteActionPrompt" class="text-xs sm:text-sm text-slate-700 dark:text-slate-100 font-medium leading-relaxed">
+
+          창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="w-full flex gap-2">
+
+        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+
+          <span id="copyBtnText">문구 복사하기</span>
+
+        </button>
+
+        <button id="drawAgainBtn" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl text-xs font-bold shadow-md flex items-center justify-center gap-1.5">
+
+          <span>다시 뽑기</span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==================== 보관함 드로어 ==================== -->
+
+  <div id="drawerOverlay" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div id="drawerPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-5 flex flex-col transform translate-x-full transition-transform duration-300 ease-out drawer-panel-bg">
+
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+
+        <div class="flex items-center gap-2">
+
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+
+          </div>
+
+          <div>
+
+            <h2 class="text-base font-bold text-slate-800 dark:text-slate-100">나의 힐링 보관함</h2>
+
+            <p id="drawerProgressText" class="text-xs text-slate-400">총 0개의 힐링 메시지를 모았어요</p>
+
+          </div>
+
+        </div>
+
+        <button id="closeBoxBtn" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+        </button>
+
+      </div>
+
+      <div id="collectedList" class="flex-1 overflow-y-auto space-y-3 pr-1 my-3"></div>
+
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+
+        <button id="clearStorageBtn" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">보관함 초기화</button>
+
+        <span class="text-[11px] text-slate-400">브라우저 자동 보관</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- 토스트 알림 -->
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 dark:bg-slate-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1.5 border border-slate-700">
+
+    <span id="toastMessage">알림</span>
+
+  </div>
+
+
+
+  <!-- ==================== 자바스크립트 통합 로직 ==================== -->
+
+  <script>
+
+    /* 데이터베이스 (가챠 & 크레인 공용 통합 DB) */
+
+    const GAW_QUOTES = [
+
+      { id: 1, type: 'gacha', category: "위로 & 쉼", quote: "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야.", prompt: "오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요." },
+
+      { id: 2, type: 'gacha', category: "용기 & 시작", quote: "새로운 시작 앞에서 떨리는 건, 네가 그만큼 진심이기 때문이야.", prompt: "두려움 뒤에 숨어있는 당신의 설렘을 찬찬히 마주해보세요." },
+
+      { id: 3, type: 'gacha', category: "내면의 힘", quote: "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔.", prompt: "과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요." },
+
+      { id: 4, type: 'gacha', category: "성장 & 과정", quote: "꽃마다 피어나는 계절이 다르듯, 너만의 만개할 순간이 다가오고 있어.", prompt: "조급한 마음이 들 때마다 시원한 물 한 잔을 천천히 들이켜보세요." },
+
+      { id: 5, type: 'gacha', category: "따뜻한 응원", quote: "오늘 하루도 버텨낸 당신, 그거 하나만으로도 이미 대단한 일이에요.", prompt: "나 자신에게 '오늘도 참 애썼다'고 소리 내어 말해주세요." },
+
+      { id: 6, type: 'claw', category: "드라마 명대사", quote: "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아.", source: "드라마 <미스터 션샤인>", prompt: "거울 속 내 눈을 5초간 다정하게 바라보며, '나는 존중받아 마땅한 사람이야'라고 소리 내어 말해주기." },
+
+      { id: 7, type: 'claw', category: "영화 명대사", quote: "과거는 아플 수 있어. 하지만 둘 중 하나야. 도망치든가, 아니면 극복하든가.", source: "영화 <라이온 킹>", prompt: "최근 나를 괴롭혔던 과거의 실수 하나를 떠올리고, '그땐 그게 최선이었어'라고 흘려보내기." },
+
+      { id: 8, type: 'claw', category: "한국 현대시", quote: "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니.", source: "도종환, 시 <흔들리며 피는 꽃>", prompt: "지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의해보기." },
+
+      { id: 9, type: 'claw', category: "드라마 명대사", quote: "완벽하지 않아도 괜찮아. 조금 서툴러도 너는 너니까 충분해.", source: "드라마 <눈이 부시게>", prompt: "오늘 완벽하지 못했더라도 '그래도 오늘 시작한 게 어디야!'라며 나를 칭찬해주기." },
+
+      { id: 10, type: 'claw', category: "문학 / 시", quote: "자세히 보아야 예쁘다. 오래 보아야 사랑스럽다. 너도 그렇다.", source: "나태주, 시 <풀꽃>", prompt: "나만의 장점, 혹은 나만의 소소하고 매력적인 버릇 2가지 찾아 메모하기." }
+
+    ];
+
+
+
+    const CAPSULE_PALETTES = [
+
+      { top: "from-pink-400 to-rose-500" }, { top: "from-amber-300 to-yellow-500" },
+
+      { top: "from-sky-400 to-blue-500" }, { top: "from-emerald-300 to-teal-500" },
+
+      { top: "from-purple-400 to-indigo-500" }, { top: "from-orange-400 to-amber-500" }
+
+    ];
+
+
+
+    /* 오디오 신디사이저 */
+
+    class AudioSynth {
+
+      constructor() { this.ctx = null; }
+
+      init() {
+
+        if (!this.ctx) {
+
+          const AC = window.AudioContext || window.webkitAudioContext;
+
+          this.ctx = new AC();
+
+        }
+
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+      }
+
+      playTone(freq, duration, type='sine', vol=0.2) {
+
+        this.init();
+
+        const osc = this.ctx.createOscillator();
+
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+        gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+
+        osc.connect(gain);
+
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+
+        osc.stop(this.ctx.currentTime + duration);
+
+      }
+
+      playCrank() { this.playTone(140, 0.12, 'triangle', 0.3); }
+
+      playDrop() { this.playTone(320, 0.08, 'sine', 0.25); }
+
+      playPop() { [523, 659, 783, 1046].forEach((f, i) => setTimeout(() => this.playTone(f, 0.3, 'sine', 0.2), i * 60)); }
+
+    }
+
+    const sound = new AudioSynth();
+
+
+
+    /* 상태 관리 */
+
+    let currentTab = 'gacha'; // 'gacha' or 'claw'
+
+    let savedCollectedIds = JSON.parse(localStorage.getItem('healing_arcade_collected') || '[]');
+
+    let currentItem = null;
+
+    let currentPalette = null;
+
+
+
+    // DOM 참조
+
+    const tabGacha = document.getElementById('tabGacha');
+
+    const tabClaw = document.getElementById('tabClaw');
+
+    const viewGacha = document.getElementById('viewGacha');
+
+    const viewClaw = document.getElementById('viewClaw');
+
+
+
+    // 탭 전환 로직
+
+    function switchTab(tab) {
+
+      currentTab = tab;
+
+      if (tab === 'gacha') {
+
+        viewGacha.classList.remove('hidden');
+
+        viewClaw.classList.add('hidden');
+
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+
+        populateChamber();
+
+      } else {
+
+        viewGacha.classList.add('hidden');
+
+        viewClaw.classList.remove('hidden');
+
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+
+        initClawBalls();
+
+      }
+
+    }
+
+
+
+    tabGacha.addEventListener('click', () => switchTab('gacha'));
+
+    tabClaw.addEventListener('click', () => switchTab('claw'));
+
+
+
+    /* 다크모드 설정 */
+
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+    const sunIcon = document.getElementById('sunIcon');
+
+    const moonIcon = document.getElementById('moonIcon');
+
+
+
+    function setTheme(isDark) {
+
+      if (isDark) {
+
+        document.body.classList.add('dark-mode');
+
+        document.documentElement.classList.add('dark');
+
+        sunIcon.classList.remove('hidden');
+
+        moonIcon.classList.add('hidden');
+
+        localStorage.setItem('theme', 'dark');
+
+      } else {
+
+        document.body.classList.remove('dark-mode');
+
+        document.documentElement.classList.remove('dark');
+
+        sunIcon.classList.add('hidden');
+
+        moonIcon.classList.remove('hidden');
+
+        localStorage.setItem('theme', 'light');
+
+      }
+
+    }
+
+    themeToggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-mode')));
+
+    if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 머신 1: 캡슐 가챠 로직
+
+     * ----------------------------------------------------------- */
+
+    const chamber = document.getElementById('capsuleChamber');
+
+    const lever = document.getElementById('leverControl');
+
+    const dropSlot = document.getElementById('dropSlot');
+
+    const emptySlotGuide = document.getElementById('emptySlotGuide');
+
+    let isGachaOperating = false;
+
+    let droppedCapsuleElem = null;
+
+    let leverRotation = 0;
+
+
+
+    function populateChamber() {
+
+      chamber.innerHTML = '';
+
+      for (let i = 0; i < 28; i++) {
+
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+
+        const el = document.createElement('div');
+
+        el.className = 'capsule-ball';
+
+        const size = 38 + (i % 5) * 2;
+
+        el.style.width = `${size}px`; el.style.height = `${size}px`;
+
+        const angle = (i / 28) * Math.PI * 2 + (Math.random() * 0.4);
+
+        const radius = 30 + Math.random() * 65;
+
+        const posX = Math.max(15, Math.min(210, 125 + Math.cos(angle) * radius));
+
+        const posY = Math.max(25, Math.min(205, 135 + Math.sin(angle) * (radius * 0.85)));
+
+        el.style.left = `${posX}px`; el.style.top = `${posY}px`;
+
+        el.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+
+        el.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${pal.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50 dark:bg-slate-200"></div><div class="capsule-seam"></div>`;
+
+        chamber.appendChild(el);
+
+      }
+
+    }
+
+
+
+    function operateGacha() {
+
+      if (isGachaOperating) return;
+
+      if (droppedCapsuleElem) {
+
+        showToast("이미 나온 캡슐을 먼저 터치해 열어보세요! ✨");
+
+        return;
+
+      }
+
+      isGachaOperating = true;
+
+      sound.playCrank();
+
+      leverRotation += 360;
+
+      lever.style.transform = `rotate(${leverRotation}deg)`;
+
+
+
+      const capsules = chamber.querySelectorAll('.capsule-ball');
+
+      capsules.forEach(c => c.classList.add('tumbling'));
+
+
+
+      setTimeout(() => {
+
+        capsules.forEach(c => c.classList.remove('tumbling'));
+
+        sound.playDrop();
+
+        emptySlotGuide.style.display = 'none';
+
+
+
+        currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+
+        const gachaItems = GAW_QUOTES.filter(q => q.type === 'gacha');
+
+        currentItem = gachaItems[Math.floor(Math.random() * gachaItems.length)];
+
+
+
+        const capsule = document.createElement('div');
+
+        capsule.className = 'w-12 h-12 rounded-full cursor-pointer capsule-ball animate-drop-bounce pulse-touch relative z-30 flex items-center justify-center';
+
+        capsule.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${currentPalette.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50"></div><div class="capsule-seam"></div><span class="absolute text-xs z-10">✨</span>`;
+
+        capsule.addEventListener('click', openResultModal);
+
+        dropSlot.appendChild(capsule);
+
+        droppedCapsuleElem = capsule;
+
+        isGachaOperating = false;
+
+        showToast("캡슐이 나왔어요! 터치해 열어보세요 🎁");
+
+      }, 700);
+
+    }
+
+    if (lever) lever.addEventListener('click', operateGacha);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 머신 2: UFO 크레인 집게 로직
+
+     * ----------------------------------------------------------- */
+
+    const clawArena = document.getElementById('craneArena');
+
+    const ballField = document.getElementById('ballField');
+
+    const craneTrolley = document.getElementById('craneTrolley');
+
+    const craneWire = document.getElementById('craneWire');
+
+    const clawMech = document.getElementById('clawMechanism');
+
+    const clawBallMount = document.getElementById('clawBallMount');
+
+    const joystickKnob = document.getElementById('joystickKnob');
+
+    const prizeDropPocket = document.getElementById('prizeDropPocket');
+
+    const pocketPlaceholder = document.getElementById('pocketPlaceholder');
+
+    const btnLeft = document.getElementById('btnLeft');
+
+    const btnRight = document.getElementById('btnRight');
+
+    const btnCatch = document.getElementById('btnCatch');
+
+
+
+    let currentX = 180; let isClawBusy = false; let droppedClawPrize = null;
+
+
+
+    function initClawBalls() {
+
+      if (!ballField) return;
+
+      ballField.innerHTML = '';
+
+      const rect = clawArena.getBoundingClientRect();
+
+      const maxRange = Math.floor(rect.width - 50);
+
+      for (let i = 0; i < 22; i++) {
+
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+
+        const ball = document.createElement('div');
+
+        ball.className = `self-ball w-10 h-10 bg-gradient-to-br ${pal.top} border border-white/40 flex items-center justify-center text-[10px] text-white font-bold`;
+
+        ball.style.left = `${95 + Math.random() * (maxRange - 100)}px`;
+
+        ball.style.top = `${215 + Math.random() * 55}px`;
+
+        ball.innerHTML = `♥`;
+
+        ballField.appendChild(ball);
+
+      }
+
+    }
+
+
+
+    function moveCrane(delta) {
+
+      if (isClawBusy) return;
+
+      currentX = Math.max(40, Math.min(280, currentX + delta));
+
+      craneTrolley.style.left = `${currentX}px`;
+
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+
+    }
+
+    let moveInterval = null;
+
+    function startMove(delta) {
+
+      if (isClawBusy) return;
+
+      moveCrane(delta);
+
+      moveInterval = setInterval(() => moveCrane(delta), 90);
+
+      joystickKnob.style.transform = `translateX(${delta > 0 ? 8 : -8}px)`;
+
+    }
+
+    function stopMove() { clearInterval(moveInterval); joystickKnob.style.transform = 'translateX(0px)'; }
+
+
+
+    if (btnLeft) {
+
+      btnLeft.addEventListener('mousedown', () => startMove(-12));
+
+      btnLeft.addEventListener('mouseup', stopMove);
+
+      btnLeft.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(-12); });
+
+      btnLeft.addEventListener('touchend', stopMove);
+
+    }
+
+    if (btnRight) {
+
+      btnRight.addEventListener('mousedown', () => startMove(12));
+
+      btnRight.addEventListener('mouseup', stopMove);
+
+      btnRight.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(12); });
+
+      btnRight.addEventListener('touchend', stopMove);
+
+    }
+
+
+
+    function executeClawCatch() {
+
+      if (isClawBusy) return;
+
+      if (droppedClawPrize) {
+
+        showToast("배출구에 나온 볼을 먼저 열어주세요!");
+
+        return;
+
+      }
+
+      isClawBusy = true;
+
+      btnCatch.classList.add('opacity-50');
+
+
+
+      craneWire.style.height = '180px';
+
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+
+
+
+      setTimeout(() => {
+
+        clawMech.classList.add('claw-closed');
+
+        sound.playTone(220, 0.15, 'triangle', 0.2);
+
+
+
+        const willCatch = currentX > 85 && Math.random() > 0.05;
+
+        if (willCatch) {
+
+          currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+
+          const clawItems = GAW_QUOTES.filter(q => q.type === 'claw');
+
+          currentItem = clawItems[Math.floor(Math.random() * clawItems.length)];
+
+          clawBallMount.innerHTML = `<div class="w-8 h-8 rounded-full bg-gradient-to-br ${currentPalette.top} border border-white/60 shadow-lg flex items-center justify-center text-xs text-white">♥</div>`;
+
+        }
+
+
+
+        setTimeout(() => {
+
+          craneWire.style.height = '24px';
+
+          setTimeout(() => {
+
+            craneTrolley.style.transition = 'left 1s ease';
+
+            craneTrolley.style.left = '45px';
+
+            currentX = 45;
+
+
+
+            setTimeout(() => {
+
+              clawMech.classList.remove('claw-closed');
+
+              sound.playTone(200, 0.15, 'triangle', 0.2);
+
+              clawBallMount.innerHTML = '';
+
+              craneTrolley.style.transition = 'none';
+
+
+
+              if (willCatch) {
+
+                sound.playPop();
+
+                pocketPlaceholder.style.display = 'none';
+
+                const prize = document.createElement('div');
+
+                prize.className = `w-9 h-9 rounded-full bg-gradient-to-br ${currentPalette.top} border-2 border-white shadow-lg cursor-pointer prize-pulse flex items-center justify-center text-xs text-white font-bold`;
+
+                prize.innerHTML = `💌`;
+
+                prize.addEventListener('click', openResultModal);
+
+                prizeDropPocket.innerHTML = '';
+
+                prizeDropPocket.appendChild(prize);
+
+                droppedClawPrize = prize;
+
+                showToast("볼을 뽑았습니다! 터치해 열어보세요 🎁");
+
+              } else {
+
+                showToast("아쉽게 놓쳤어요! 다시 도전해보세요.");
+
+              }
+
+              isClawBusy = false;
+
+              btnCatch.classList.remove('opacity-50');
+
+            }, 1000);
+
+          }, 600);
+
+        }, 400);
+
+      }, 750);
+
+    }
+
+    if (btnCatch) btnCatch.addEventListener('click', executeClawCatch);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 결과 모달 및 보관함 공용 로직
+
+     * ----------------------------------------------------------- */
+
+    const quoteModal = document.getElementById('quoteModal');
+
+    const quoteModalCard = document.getElementById('quoteModalCard');
+
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    const drawAgainBtn = document.getElementById('drawAgainBtn');
+
+    const copyQuoteBtn = document.getElementById('copyQuoteBtn');
+
+    const copyBtnText = document.getElementById('copyBtnText');
+
+    const modalCapsuleGraphic = document.getElementById('modalCapsuleGraphic');
+
+    const quoteCategoryTag = document.getElementById('quoteCategoryTag');
+
+    const quoteMainText = document.getElementById('quoteMainText');
+
+    const quoteActionPrompt = document.getElementById('quoteActionPrompt');
+
+    const sourceWrapper = document.getElementById('sourceWrapper');
+
+    const quoteSourceText = document.getElementById('quoteSourceText');
+
+
+
+    function openResultModal() {
+
+      if (!currentItem) return;
+
+      sound.playPop();
+
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.65 } });
+
+
+
+      if (!savedCollectedIds.includes(currentItem.id)) {
+
+        savedCollectedIds.push(currentItem.id);
+
+        localStorage.setItem('healing_arcade_collected', JSON.stringify(savedCollectedIds));
+
+        updateDrawerUI();
+
+      }
+
+
+
+      quoteCategoryTag.textContent = currentItem.category;
+
+      quoteMainText.textContent = `"${currentItem.quote}"`;
+
+      quoteActionPrompt.textContent = currentItem.prompt;
+
+
+
+      if (currentItem.source) {
+
+        quoteSourceText.textContent = currentItem.source;
+
+        sourceWrapper.classList.remove('hidden');
+
+      } else {
+
+        sourceWrapper.classList.add('hidden');
+
+      }
+
+
+
+      modalCapsuleGraphic.className = `w-16 h-16 rounded-full mb-3 shadow-lg flex items-center justify-center relative bg-gradient-to-br ${currentPalette.top} text-white text-2xl`;
+
+      modalCapsuleGraphic.innerHTML = `💖`;
+
+
+
+      quoteModal.classList.remove('opacity-0', 'pointer-events-none');
+
+      quoteModalCard.classList.remove('scale-90');
+
+      quoteModalCard.classList.add('scale-100');
+
+
+
+      if (droppedCapsuleElem) { droppedCapsuleElem.remove(); droppedCapsuleElem = null; emptySlotGuide.style.display = 'flex'; }
+
+      if (droppedClawPrize) { droppedClawPrize.remove(); droppedClawPrize = null; pocketPlaceholder.style.display = 'inline'; }
+
+    }
+
+
+
+    function closeResultModal() {
+
+      quoteModal.classList.add('opacity-0', 'pointer-events-none');
+
+      quoteModalCard.classList.remove('scale-100');
+
+      quoteModalCard.classList.add('scale-90');
+
+      copyBtnText.textContent = '문구 복사하기';
+
+    }
+
+
+
+    closeModalBtn.addEventListener('click', closeResultModal);
+
+    drawAgainBtn.addEventListener('click', () => {
+
+      closeResultModal();
+
+      setTimeout(() => {
+
+        if (currentTab === 'gacha') operateGacha();
+
+        else executeClawCatch();
+
+      }, 250);
+
+    });
+
+
+
+    copyQuoteBtn.addEventListener('click', () => {
+
+      if (!currentItem) return;
+
+      const text = `[힐링 아케이드]\n"${currentItem.quote}"${currentItem.source ? '\n— ' + currentItem.source : ''}\n\n🌱 ${currentItem.prompt}`;
+
+      navigator.clipboard.writeText(text).then(() => {
+
+        copyBtnText.textContent = '복사 완료! ✨';
+
+        showToast("클립보드에 복사되었습니다!");
+
+        setTimeout(() => copyBtnText.textContent = '문구 복사하기', 1800);
+
+      });
+
+    });
+
+
+
+    /* 보관함 드로어 */
+
+    const openBoxBtn = document.getElementById('openBoxBtn');
+
+    const closeBoxBtn = document.getElementById('closeBoxBtn');
+
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    const drawerPanel = document.getElementById('drawerPanel');
+
+    const collectedList = document.getElementById('collectedList');
+
+    const collectedCountBadge = document.getElementById('collectedCountBadge');
+
+    const drawerProgressText = document.getElementById('drawerProgressText');
+
+    const clearStorageBtn = document.getElementById('clearStorageBtn');
+
+
+
+    function updateDrawerUI() {
+
+      const count = savedCollectedIds.length;
+
+      collectedCountBadge.textContent = count;
+
+      drawerProgressText.textContent = `총 ${count}개의 힐링 메시지를 모았어요`;
+
+
+
+      if (count === 0) {
+
+        collectedList.innerHTML = `<div class="h-64 flex flex-col items-center justify-center text-center text-slate-400"><span class="text-3xl mb-2">🎁</span><p class="text-xs font-semibold">아직 수집된 메시지가 없어요.</p><p class="text-[11px] text-slate-400 mt-1">가챠나 크레인 머신을 즐겨보세요!</p></div>`;
+
+        return;
+
+      }
+
+
+
+      collectedList.innerHTML = '';
+
+      [...savedCollectedIds].reverse().forEach(id => {
+
+        const item = GAW_QUOTES.find(q => q.id === id);
+
+        if (!item) return;
+
+        const card = document.createElement('div');
+
+        card.className = 'bg-rose-50/50 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 text-left sub-card-bg';
+
+        card.innerHTML = `
+
+          <div class="flex items-center justify-between mb-1">
+
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">${item.category}</span>
+
+            ${item.source ? '<span class="text-[10px] text-amber-600 dark:text-amber-300 font-semibold">— ' + item.source + '</span>' : ''}
+
+          </div>
+
+          <p class="text-xs font-bold text-slate-800 dark:text-slate-100 font-serif-quote leading-relaxed mb-1">"${item.quote}"</p>
+
+          <p class="text-[11px] text-slate-500 dark:text-slate-300">🌱 ${item.prompt}</p>
+
+        `;
+
+        collectedList.appendChild(card);
+
+      });
+
+    }
+
+
+
+    openBoxBtn.addEventListener('click', () => { drawerOverlay.classList.remove('opacity-0', 'pointer-events-none'); drawerPanel.classList.remove('translate-x-full'); });
+
+    function closeDrawer() { drawerOverlay.classList.add('opacity-0', 'pointer-events-none'); drawerPanel.classList.add('translate-x-full'); }
+
+    closeBoxBtn.addEventListener('click', closeDrawer);
+
+    drawerOverlay.addEventListener('click', (e) => { if (e.target === drawerOverlay) closeDrawer(); });
+
+
+
+    clearStorageBtn.addEventListener('click', () => {
+
+      if (confirm("보관함을 초기화하시겠습니까?")) {
+
+        savedCollectedIds = [];
+
+        localStorage.removeItem('healing_arcade_collected');
+
+        updateDrawerUI();
+
+        showToast("보관함이 초기화되었습니다.");
+
+      }
+
+    });
+
+
+
+    let toastTimer = null;
+
+    function showToast(msg) {
+
+      const toast = document.getElementById('toast');
+
+      const toastMsg = document.getElementById('toastMessage');
+
+      toastMsg.textContent = msg;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2200);
+
+    }
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      populateChamber();
+
+      updateDrawerUI();
+
+    });
+
+    window.addEventListener('resize', () => { if (currentTab === 'claw') initClawBalls(); });
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+"https://adsense-ko.googleblog.com/2012/04/blog-post_25.html" 에서 안내해 주는 데로 코드가 짜여져 있어? 
+
+제공해주신 HTML 코드에는 해당 블로그(구글 애드센스 공식 블로그의 ‘애드센스 광고 코드 구현 가이드 / 비동기 코드 삽입 안내’)에서 안내하는 애드센스 광고 코드가 전혀 포함되어 있지 않습니다.
+
+현재 코드 상태와 블로그 안내 기준을 비교하면 다음과 같습니다.
+
+1. 현재 코드 점검 결과
+애드센스 스크립트 부재: <script async src="[https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js](https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js)..."></script> 같은 애드센스 라이브러리 호출 코드가 없습니다.
+
+광고 단위 태그 부재: <ins class="adsbygoogle" ...></ins> 및 실행 스크립트 (adsbygoogle = window.adsbygoogle || []).push({}); 가 존재하지 않습니다.
+
+포함된 외부 스크립트: Tailwind CSS, Google Fonts, Canvas-Confetti, 그리고 Disqus 댓글창 스크립트만 들어가 있습니다.
+
+2. 애드센스 공식 가이드에 맞춘 올바른 구현 방식
+해당 블로그 포스트에서 권장하는 비동기(Asynchronous) 광고 코드 표준 규격은 다음과 같습니다.
+
+① <head> 내부: 애드센스 스크립트 로드
+페이지 로딩 속도 저하를 막기 위해 async 속성이 포함된 스크립트를 <head> 안에 1회 삽입합니다.
+
+HTML
+<head>
+  <!-- 기존 메타 태그 및 스타일시트 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+② <body> 내부: 광고가 노출될 실제 위치 지정
+광고를 배치하고 싶은 영역(예: 아케이드 하단, 본문 하단, 사이드바 등)에 <ins> 태그와 푸시 스크립트를 넣습니다.
+
+HTML
+<!-- 광고가 들어갈 위치 -->
+<div class="w-full flex justify-center my-6">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+3. 페이지 내 추천 배치 위치
+현재 레이아웃 구조(좌측 게임 머신 + 우측 Disqus 댓글창)에서는 다음 두 위치가 애드센스 정책(콘텐츠 오인 클릭 유도 금지)을 준수하면서 자연스럽게 어울립니다.
+
+우측 댓글 섹션 하단: <div id="disqus_thread"></div> 바로 아래
+
+페이지 하단 푸터 바로 위: <main>이 끝나고 <footer>가 시작되기 전 가로형 배너 배치
+
+광고를 게재하려면 발급받으신 본인의 게시자 ID(ca-pub-...)와 광고 단위 ID(data-ad-slot)를 확인한 뒤 위 코드를 추가해 주셔야 합니다.
+
+애드 센스 광고 붙이기 전에 웹 품질을 향상시키려고
+
+애드센스 승인과 수익화를 목표로 할 때, 단일 인터랙티브 게임/도구 페이지는 구글 심사관(또는 AI 심사 봇)에게 가장 흔하게 "가치 있는 인벤토리: 콘텐츠 부족(Low-value content)" 사유로 거절당하기 쉽습니다. 자바스크립트로 동작하는 동적 텍스트는 크롤러가 충분한 본문 텍스트로 인식하지 못하기 때문입니다.
+
+현재 코드의 장점(완성도 높은 인터랙션, 모바일 반응형, 다크모드)을 살리면서, 애드센스 심사를 통과하고 장기적인 웹 품질을 높이기 위한 핵심 개선 전략 4가지를 정리해 드립니다.
+
+1. 크롤러 친화적인 텍스트 콘텐츠 보강 (가장 시급)
+구글 애드센스 크롤러는 자바스크립트 클릭 이벤트(캡슐 열기 등)를 일일이 실행해서 명언을 읽지 않습니다. 페이지가 로드될 때 HTML 상에 읽을 수 있는 텍스트가 풍부해야 합니다.
+
+서비스 소개 및 큐레이션 배경 섹션 추가:
+
+메인 머신 아래쪽에 "힐링 아케이드가 전하는 마음 처방전", "자존감 충전을 위한 일상 속 작은 실천법" 같은 500~1,000자 분량의 정적 텍스트 아티클 섹션을 배치하세요.
+
+추천 명언 컬렉션 미리보기 (정적 리스트):
+
+모달 안에만 숨어있는 10개의 명언 중 대표적인 3~4개를 본문 하단에 '오늘의 추천 문장' 형태로 HTML 텍스트로 풀어두면 크롤러가 의미 있는 콘텐츠로 수집합니다.
+
+2. SEO(검색엔진 최적화) 및 메타데이터 강화
+현재 <head>에는 기본적인 폰트와 Tailwind만 있습니다. 검색 유입과 사이트 신뢰도를 위해 메타 태그를 완비해야 합니다.
+
+Open Graph 및 기본 메타 태그 삽입:
+
+HTML
+<meta name="description" content="지친 일상에 따뜻한 위로와 자존감을 선물하는 힐링 아케이드. 마음 캡슐 뽑기와 인터랙티브 미니 게임으로 오늘의 위로를 만나보세요." />
+<meta name="keywords" content="힐링, 자존감, 마음챙김, 위로글귀, 명언, 미니게임" />
+<meta property="og:title" content="힐링 아케이드 | 마음 캡슐 & 자존감 픽업 머신" />
+<meta property="og:description" content="하루 한 번, 나만을 위한 따뜻한 한 줄 위로와 마음 미션" />
+<meta property="og:type" content="website" />
+<!-- 파비콘 및 대표 이미지 추가 권장 -->
+구조화 데이터(Schema.org JSON-LD):
+
+웹 애플리케이션(WebApplication) 또는 엔터테인먼트 도구 형태의 스키마를 넣어 구글이 사이트의 정체를 명확히 인지하도록 돕습니다.
+
+3. 법적 필수 페이지 & 사이트 신뢰도(E-E-A-T) 구축
+애드센스 심사 통과를 위해 구글이 엄격하게 확인하는 필수 요소입니다. 헤더의 "제휴 문의" 외에 푸터에 다음 링크들이 반드시 갖춰져야 합니다.
+
+개인정보처리방침(Privacy Policy):
+
+Disqus 댓글창, 로컬스토리지(LocalStorage), 향후 들어갈 구글 쿠키/광고 추적에 대한 안내가 들어간 별도 페이지(privacy.html)가 필수입니다.
+
+이용약관(Terms of Service) 및 소개(About Us):
+
+이 사이트를 누가, 어떤 취지로 만들었는지 간략히 설명하는 페이지를 마련하면 승인 확률이 급격히 올라갑니다.
+
+운영자 정보/문의처 표기: 푸터에 이메일 주소나 문의 양식 링크 명시.
+
+4. 성능(Core Web Vitals) 및 접근성(A11y) 최적화
+광고 스크립트가 붙으면 사이트가 무거워지므로, 기본 뼈대는 최대한 가볍고 표준을 지켜야 합니다.
+
+Tailwind CDN 교체 (프로덕션 빌드 권장):
+
+현재 <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>는 런타임에 CSS를 생성하는 개발용 방식입니다. 실제 서비스에서는 번들링된 경량 CSS 파일로 배포해야 First Contentful Paint(FCP) 점수가 개선됩니다.
+
+접근성(ARIA & Focus):
+
+버튼 요소들에 스크린 리더용 레이블(aria-label)을 보강하세요.
+
+예: themeToggleBtn에 aria-label="다크 모드 전환", 크레인 이동 버튼에 aria-label="왼쪽으로 크레인 이동" 추가.
+
+Disqus 지연 로딩(Lazy Loading):
+
+Disqus는 수많은 외부 스크립트를 로드해 초기 렌더링 성능을 떨어뜨립니다. 페이지가 로드되자마자 부르기보다는, 사용자가 댓글 영역 근처로 스크롤했을 때(Intersection Observer 활용) 로드되도록 변경하면 초기 로딩 속도가 2~3배 빨라집니다.
+
+추천 작업 순서
+푸터에 필수 정책 링크(Privacy Policy, About) 추가
+
+머신 아래쪽에 크롤러가 읽을 수 있는 '서비스 취지 및 힐링 가이드' 본문 텍스트 2~3문단 추가
+
+메타 태그(Description, OG 태그) 및 파비콘 추가
+
+Disqus 지연 로딩 적용
+
+이 네 가지만 먼저 보완해도 애드센스 심사 시 '콘텐츠 부족'으로 거절당할 위험을 대폭 낮출 수 있습니다. 구체적인 소개글 구성이나 개인정보처리방침 표준 양식이 필요하시면 바로 작성해 드릴 수 있습니다.
+
+이렇게 코드 업데이트 했는데 게임이 안보이고 추가한 글만보이고 제휴문의 버튼 누르면 이미지가 엄청 크게 보이고 엉망이 되었어.
+
+아래 코드에서 문제를 찾아줘.
+
+
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>힐링 아케이드 | 마음 캡슐 & 자존감 픽업 머신</title>
+
+  <meta name="description" content="지친 일상에 따뜻한 위로와 자존감을 선물하는 힐링 아케이드. 마음 캡슐 뽑기와 인터랙티브 미니 게임으로 오늘의 위로를 만나보세요." />
+
+  <meta name="keywords" content="힐링, 자존감, 마음챙김, 위로글귀, 명언, 미니게임" />
+
+  <meta property="og:title" content="힐링 아케이드 | 마음 캡슐 & 자존감 픽업 머신" />
+
+  <meta property="og:description" content="하루 한 번, 나만을 위한 따뜻한 한 줄 위로와 마음 미션" />
+
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>">
+
+  <link rel="stylesheet" href="output.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Nanum+Myeongjo:wght@700;800&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+  <style>
+
+    body {
+
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+      user-select: none;
+
+      -webkit-tap-highlight-color: transparent;
+
+      transition: background 0.3s ease, color 0.3s ease;
+
+    }
+
+    .font-serif-quote {
+
+      font-family: 'Nanum Myeongjo', serif;
+
+    }
+
+    .font-hand {
+
+      font-family: 'Gaegu', cursive, sans-serif;
+
+    }
+
+
+
+    /* 다크모드 테마 (가독성 고대비) */
+
+    body.dark-mode, html.dark body {
+
+      background: linear-gradient(to bottom right, #090d16, #141124, #030712) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+    body.dark-mode .glass-dome-container, html.dark .glass-dome-container {
+
+      background: linear-gradient(to bottom, rgba(30,41,59,0.6), rgba(15,23,42,0.4), rgba(30,41,59,0.8)) !important;
+
+      border-color: rgba(255,255,255,0.2) !important;
+
+    }
+
+    body.dark-mode .modal-card-bg, html.dark .modal-card-bg {
+
+      background: linear-gradient(to bottom, #1e293b, #0f172a, #020617) !important;
+
+      border-color: rgba(255,255,255,0.25) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+    body.dark-mode .drawer-panel-bg, html.dark .drawer-panel-bg {
+
+      background-color: #0f172a !important;
+
+      color: #f8fafc !important;
+
+      border-color: rgba(255,255,255,0.15) !important;
+
+    }
+
+    body.dark-mode .sub-card-bg, html.dark .sub-card-bg {
+
+      background-color: rgba(30, 41, 59, 0.95) !important;
+
+      border-color: rgba(100, 116, 139, 1) !important;
+
+      color: #f8fafc !important;
+
+    }
+
+
+
+    /* 3D 캡슐 볼 스타일 */
+
+    .capsule-ball, .self-ball {
+
+      border-radius: 50%;
+
+      position: absolute;
+
+      box-shadow: inset -4px -4px 8px rgba(0,0,0,0.35),
+
+                  inset 4px 4px 8px rgba(255,255,255,0.7),
+
+                  0 6px 12px rgba(0,0,0,0.22);
+
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    }
+
+    .capsule-seam {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 2px;
+
+      background: rgba(0,0,0,0.2);
+
+      box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+
+      transform: translateY(-50%);
+
+    }
+
+
+
+    /* 유리 반사 효과 */
+
+    .glass-reflection {
+
+      background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.25) 100%);
+
+    }
+
+    body.dark-mode .glass-reflection, html.dark .glass-reflection {
+
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.08) 100%);
+
+    }
+
+
+
+    /* 애니메이션들 */
+
+    @keyframes tumbleMix {
+
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+
+      20% { transform: translate(-10px, -24px) rotate(45deg) scale(1.05); }
+
+      40% { transform: translate(12px, -36px) rotate(-60deg) scale(0.95); }
+
+      60% { transform: translate(-14px, -18px) rotate(90deg) scale(1.03); }
+
+      80% { transform: translate(8px, -28px) rotate(-40deg) scale(1.01); }
+
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+
+    }
+
+    .tumbling {
+
+      animation: tumbleMix 0.55s ease-in-out infinite alternate;
+
+    }
+
+
+
+    @keyframes dropBounce {
+
+      0% { transform: translateY(-70px) scale(0.6); opacity: 0; }
+
+      50% { transform: translateY(10px) scale(1.1); opacity: 1; }
+
+      70% { transform: translateY(-8px) scale(0.95); }
+
+      85% { transform: translateY(4px) scale(1.02); }
+
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+
+    }
+
+    .animate-drop-bounce {
+
+      animation: dropBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+    }
+
+
+
+    @keyframes pulseGlow {
+
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.6)); }
+
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(255, 105, 180, 0.9)); }
+
+    }
+
+    .pulse-touch {
+
+      animation: pulseGlow 1.2s infinite ease-in-out;
+
+    }
+
+
+
+    /* UFO 크레인 갈퀴 스타일 */
+
+    .claw-arm-left {
+
+      transform-origin: top right;
+
+      transition: transform 0.25s ease-in-out;
+
+    }
+
+    .claw-arm-right {
+
+      transform-origin: top left;
+
+      transition: transform 0.25s ease-in-out;
+
+    }
+
+    .claw-closed .claw-arm-left {
+
+      transform: rotate(26deg);
+
+    }
+
+    .claw-closed .claw-arm-right {
+
+      transform: rotate(-26deg);
+
+    }
+
+
+
+    .neon-border {
+
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.4), inset 0 0 15px rgba(244, 63, 94, 0.2);
+
+    }
+
+    .neon-light {
+
+      box-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48;
+
+    }
+
+
+
+    @keyframes prizePulse {
+
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #fb7185); }
+
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px #f43f5e); }
+
+    }
+
+    .prize-pulse {
+
+      animation: prizePulse 1.1s infinite ease-in-out;
+
+    }
+
+  </style>
+
+</head>
+
+<body class="bg-gradient-to-br from-amber-50 via-rose-50 to-indigo-100 min-h-screen text-slate-800 dark:text-slate-100 flex flex-col justify-between overflow-x-hidden">
+
+
+
+  <!-- 상단 네비게이션 헤더 -->
+
+  <header class="w-full max-w-6xl mx-auto px-4 pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between z-20 gap-3">
+
+    <div class="flex items-center gap-2.5">
+
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-md shadow-pink-200">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+          <circle cx="12" cy="12" r="10"></circle>
+
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+
+          <path d="M2 12h20"></path>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h1 class="text-base sm:text-lg font-bold bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 dark:from-pink-400 dark:via-rose-400 dark:to-purple-400 bg-clip-text text-transparent">힐링 아케이드</h1>
+
+        <p class="text-[11px] text-slate-500 dark:text-slate-300 font-medium">따뜻한 위로와 자존감 픽업 머신</p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 머신 선택 탭 버튼들 -->
+
+    <div class="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 p-1 rounded-2xl border border-rose-200 dark:border-slate-800 shadow-sm">
+
+      <button id="tabGacha" aria-label="마음 캡슐 뽑기 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs">
+
+        💊 마음 캡슐 뽑기
+
+      </button>
+
+      <button id="tabClaw" aria-label="자존감 픽업 머신 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500">
+
+        🕹️ 자존감 픽업 머신
+
+      </button>
+
+    </div>
+
+
+
+    <!-- 우측 액션 버튼들 (다크모드 + 보관함 + 제휴 문의) -->
+
+    <div class="flex items-center gap-1.5">
+
+      <button id="themeToggleBtn" aria-label="다크 모드 전환" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 transition-all" title="테마 전환">
+
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+
+      </button>
+
+
+
+      <button id="openBoxBtn" aria-label="힐링 보관함 열기" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+
+        <span>보관함</span>
+
+        <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+
+      </button>
+
+
+
+      <a href="contact.html" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white shadow-sm text-xs font-semibold" title="제휴 및 협업 문의">
+
+        <span>제휴 문의</span>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================== 메인 아케이드 & 댓글 섹션 컨테이너 ==================== -->
+
+  <main class="w-full max-w-6xl mx-auto px-4 py-4 flex-1 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-8 z-10">
+
+
+
+    <!-- 좌측: 뽑기 머신 영역 (마음 캡슐 가챠 & 자존감 픽업 머신) -->
+
+    <div class="w-full lg:flex-1 flex flex-col items-center justify-center lg:sticky lg:top-4">
+
+
+
+      <!-- ==================== 게임 뷰 1: 마음 캡슐 뽑기 머신 ==================== -->
+
+      <div id="viewGacha" class="w-full flex flex-col items-center justify-center">
+
+        <div class="w-full max-w-sm mx-auto px-4 py-2 flex flex-col items-center justify-center relative">
+
+          <div class="w-full flex flex-col items-center">
+
+            <!-- 뚜껑 -->
+
+            <div class="w-56 h-7 bg-gradient-to-b from-rose-500 to-rose-600 rounded-t-3xl shadow-lg border-b-2 border-rose-700/30 flex items-center justify-center relative">
+
+              <div class="w-16 h-1.5 bg-rose-300/40 rounded-full"></div>
+
+              <div class="absolute -top-3 w-7 h-7 bg-gradient-to-br from-yellow-300 to-amber-500 rounded-full border-2 border-white shadow-md flex items-center justify-center">
+
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+
+              </div>
+
+            </div>
+
+            <!-- 돔 유리 -->
+
+            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[48px] bg-gradient-to-b from-sky-50/40 via-white/20 to-sky-100/60 border-4 border-white/80 shadow-[0_15px_35px_rgba(244,114,182,0.25)] relative overflow-hidden backdrop-blur-xs flex items-center justify-center glass-dome-container">
+
+              <div class="absolute inset-0 glass-reflection pointer-events-none z-20 rounded-[44px]"></div>
+
+              <div id="capsuleChamber" class="w-full h-full relative z-10 p-2"></div>
+
+            </div>
+
+            <!-- 머신 베이스 -->
+
+            <div class="w-72 sm:w-80 bg-gradient-to-b from-rose-500 via-rose-500 to-rose-600 rounded-3xl shadow-2xl p-4 flex flex-col items-center -mt-4 z-30 border-4 border-rose-400 relative">
+
+              <div class="w-full flex justify-between items-center px-4 mb-2">
+
+                <div class="flex items-center gap-1 bg-rose-700/40 px-2.5 py-0.5 rounded-full border border-rose-300/20 text-[11px] text-rose-100 font-medium">
+
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+
+                  무한 가챠 가동 중
+
+                </div>
+
+                <div class="w-7 h-2 bg-rose-900/60 rounded-full border border-rose-400/40 shadow-inner"></div>
+
+              </div>
+
+              <!-- 레버 -->
+
+              <div class="w-28 h-28 rounded-full bg-gradient-to-br from-rose-700 via-rose-800 to-rose-900 border-4 border-rose-300/60 shadow-[inset_0_4px_8px_rgba(0,0,0,0.6)] flex items-center justify-center relative my-1">
+
+                <div id="leverControl" class="w-full h-full flex items-center justify-center cursor-pointer transition-transform duration-500 hover:scale-105 active:scale-95 group">
+
+                  <div class="w-20 h-5 bg-gradient-to-r from-slate-200 via-white to-slate-300 rounded-full shadow-md flex items-center justify-between px-1 border border-slate-300">
+
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+
+                    <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-slate-400 via-slate-100 to-slate-400 border-2 border-slate-500 flex items-center justify-center shadow-inner">
+
+                      <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+
+                    </div>
+
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="flex items-center gap-1.5 mt-2 text-rose-100 text-xs font-semibold animate-bounce">
+
+                <span>레버를 탭하거나 클릭하여 돌려보세요!</span>
+
+              </div>
+
+              <!-- 배출구 -->
+
+              <div class="w-48 h-20 bg-rose-950/80 rounded-2xl mt-3 p-1.5 shadow-[inset_0_8px_16px_rgba(0,0,0,0.7)] border-2 border-rose-800 flex items-center justify-center relative overflow-hidden">
+
+                <div id="dropSlot" class="w-full h-full flex items-center justify-center relative">
+
+                  <span id="emptySlotGuide" class="text-[11px] text-rose-300/60 font-medium">여기 캡슐이 나와요</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="w-60 h-3 bg-gradient-to-r from-rose-900 via-rose-800 to-rose-900 rounded-b-xl shadow-lg -mt-0.5"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==================== 게임 뷰 2: 자존감 픽업 머신 (UFO 크레인) ==================== -->
+
+      <div id="viewClaw" class="w-full flex flex-col items-center justify-center hidden">
+
+        <div class="w-full max-w-md mx-auto px-4 py-2 flex flex-col items-center justify-center">
+
+          <div class="w-full bg-gradient-to-b from-slate-900 via-rose-950/60 to-slate-900 rounded-3xl border-2 border-rose-500/40 p-3 shadow-2xl neon-border flex flex-col items-center relative">
+
+            <div class="w-full flex justify-between items-center px-4 py-1.5 mb-2 bg-slate-950/80 rounded-xl border border-rose-500/30">
+
+              <div class="flex items-center gap-2">
+
+                <div class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></div>
+
+                <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">Self-Esteem Catch</span>
+
+              </div>
+
+              <div class="flex gap-1 text-[11px] font-mono text-amber-300">
+
+                <span>CREDIT:</span>
+
+                <span class="font-bold">∞ FREE</span>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- 크레인 아레나 -->
+
+            <div id="craneArena" class="w-full h-80 rounded-2xl bg-gradient-to-b from-slate-950 via-slate-900 to-indigo-950/70 border border-slate-700/80 relative overflow-hidden shadow-inner">
+
+              <div class="absolute inset-0 glass-glare pointer-events-none z-30"></div>
+
+              <div class="absolute top-2 left-3 right-3 h-2 bg-slate-700 rounded-full border border-slate-600 shadow-inner z-10">
+
+                <div class="w-full h-0.5 bg-rose-400/40 mt-0.5"></div>
+
+              </div>
+
+              <!-- 크레인 트롤리 -->
+
+              <div id="craneTrolley" class="absolute top-1 left-1/2 -translate-x-1/2 z-20 transition-all duration-75 flex flex-col items-center pointer-events-none" style="transform: translateX(-50%);">
+
+                <div class="w-10 h-3 bg-gradient-to-b from-amber-400 to-amber-600 rounded-md border border-amber-300 shadow"></div>
+
+                <div id="craneWire" class="w-1 bg-slate-300 h-6 transition-all duration-300 shadow-sm"></div>
+
+                <div class="w-8 h-6 bg-gradient-to-b from-rose-500 to-rose-700 rounded-t-lg rounded-b-sm border border-rose-300 shadow-md flex items-center justify-center relative">
+
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-300 border border-white"></div>
+
+                  <div id="clawBallMount" class="absolute top-7 left-1/2 -translate-x-1/2"></div>
+
+                </div>
+
+                <div id="clawMechanism" class="relative w-12 h-6 flex justify-between px-1">
+
+                  <div class="claw-arm-left w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-right rotate-12"></div>
+
+                  <div class="w-1 h-3 bg-slate-400 mt-1"></div>
+
+                  <div class="claw-arm-right w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-left -rotate-12"></div>
+
+                </div>
+
+              </div>
+
+              <!-- 배출구 슈트 -->
+
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-black via-slate-950 to-slate-900 border-t-2 border-r-2 border-rose-500/40 rounded-tr-3xl z-10 p-1 flex items-center justify-center">
+
+                <div class="w-full h-full border border-dashed border-rose-400/40 rounded-tr-2xl flex flex-col items-center justify-center text-center p-1 bg-black/40">
+
+                  <span class="text-[10px] text-rose-300 font-bold">배출구</span>
+
+                  <span class="text-[9px] text-slate-500">PRIZE EXIT</span>
+
+                </div>
+
+              </div>
+
+              <!-- 볼 필드 -->
+
+              <div id="ballField" class="absolute inset-0 pointer-events-none z-10"></div>
+
+            </div>
+
+
+
+            <!-- 크레인 컨트롤러 -->
+
+            <div class="w-full bg-slate-900/90 rounded-2xl p-4 mt-3 border border-slate-700/80 shadow-inner flex flex-col gap-3">
+
+              <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-2">
+
+                  <button id="btnLeft" aria-label="왼쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">◀</button>
+
+                  <div class="flex flex-col items-center px-1">
+
+                    <div class="w-3 h-8 bg-slate-700 rounded-full flex items-start justify-center p-0.5">
+
+                      <div id="joystickKnob" class="w-5 h-5 rounded-full bg-rose-500 shadow-md border border-rose-300 transition-transform"></div>
+
+                    </div>
+
+                    <span class="text-[10px] text-slate-400 mt-1 font-semibold">이동</span>
+
+                  </div>
+
+                  <button id="btnRight" aria-label="오른쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">▶</button>
+
+                </div>
+
+                <div class="flex flex-col items-center">
+
+                  <button id="btnCatch" aria-label="크레인 집게 작동 (볼 집기)" class="w-24 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 active:scale-95 border-2 border-rose-300 text-white font-extrabold text-sm tracking-wider shadow-lg flex flex-col items-center justify-center neon-light">
+
+                    <span>GRAB!</span>
+
+                    <span class="text-[10px] opacity-80 font-normal">볼 집기</span>
+
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="w-full bg-slate-950 rounded-xl p-2.5 border border-slate-800 flex items-center justify-between">
+
+                <div class="flex items-center gap-2">
+
+                  <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+
+                  <span class="text-xs text-slate-300 font-medium">당첨 배출구:</span>
+
+                </div>
+
+                <div id="prizeDropPocket" class="h-11 flex-1 flex items-center justify-end px-3">
+
+                  <span id="pocketPlaceholder" class="text-xs text-slate-500 italic">집게로 볼을 뽑아보세요!</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <!-- 우측: Disqus 댓글 섹션 -->
+
+    <section class="w-full lg:w-[460px] xl:w-[500px] shrink-0">
+
+      <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-5 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
+
+        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-sm font-bold text-slate-800 dark:text-slate-100">방문자 한줄평 및 소통 공간</h3>
+
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">따뜻한 응원의 한마디나 의견을 자유롭게 남겨주세요 ✨</p>
+
+          </div>
+
+        </div>
+
+        <div id="disqus_thread"></div>
+
+        <script>
+
+          function loadDisqus() {
+
+            if (window.disqusLoaded) return;
+
+            window.disqusLoaded = true;
+
+            var d = document, s = d.createElement('script');
+
+            s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+
+            (d.head || d.body).appendChild(s);
+
+          }
+
+         
+
+          if ('IntersectionObserver' in window) {
+
+            const observer = new IntersectionObserver((entries, observer) => {
+
+              entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                  loadDisqus();
+
+                  observer.disconnect();
+
+                }
+
+              });
+
+            }, { rootMargin: '200px' });
+
+            observer.observe(document.getElementById('disqus_thread'));
+
+          } else {
+
+            loadDisqus();
+
+          }
+
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <!-- ==================== 구글 애드센스 크롤러 친화적 정적 텍스트 콘텐츠 섹션 ==================== -->
+
+  <section class="w-full max-w-6xl mx-auto px-4 my-8 z-10">
+
+    <div class="w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
+
+     
+
+      <!-- 섹션 헤더 -->
+
+      <div class="flex items-center gap-2.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-rose-200">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">힐링 아케이드 스토리 & 마음 처방전</h2>
+
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">일상 속에서 자존감을 충전하고 따뜻한 위로를 얻는 큐레이션 가이드</p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- 본문 아티클 (500~1000자 분량의 정적 텍스트) -->
+
+      <div class="space-y-6 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+
+       
+
+        <div>
+
+          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">🌿 힐링 아케이드가 전하는 마음 처방전</h3>
+
+          <p class="mb-3">
+
+            급변하는 현대 사회를 살아가다 보면 때로는 남들과의 비교 속에서 지치고, 스스로의 가치를 잊어버리게 됩니다. '힐링 아케이드'는 그러한 일상 속 현대인들에게 잠시 숨을 고를 수 있는 쉼표를 제공하고자 탄생했습니다. 단순한 재미를 넘어, 마음속 깊은 곳에 따뜻한 위로와 용기를 심어주는 디지털 아케이드 공간입니다. 마음 캡슐 뽑기와 자존감 픽업 머신을 통해 언제 어디서나 손쉽게 긍정의 에너지를 충전하고, 스스로를 더욱 아끼고 사랑하는 법을 되새겨보세요.
+
+          </p>
+
+        </div>
+
+
+
+        <div>
+
+          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">✨ 자존감 충전을 위한 일상 속 작은 실천법</h3>
+
+          <p class="mb-3">
+
+            자존감은 거대한 성취에서 오는 것이 아니라, 매일 쌓아 올리는 사소한 마음가짐과 일상 속 작은 실천에서 비롯됩니다. 첫째, 아침에 눈을 떴을 때 거울을 보며 오늘 하루도 수고할 나 자신에게 따뜻한 미소를 지어주세요. 둘째, 부정적인 생각이 밀려올 때는 잠시 멈추고 창밖의 하늘을 올려다보며 깊은 호흡을 세 번 반복해 보세요. 셋째, 완벽하지 않아도 괜찮다는 마음으로 오늘의 작은 시도 자체를 칭찬해 주는 습관을 들여보세요. 이러한 작은 실천들이 모여 당신의 내면을 단단하게 지켜주는 든든한 방패가 되어줍니다.
+
+          </p>
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <!-- 오늘의 추천 문장 컬렉션 미리보기 (정적 리스트) -->
+
+      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+
+        <div class="flex items-center justify-between mb-4">
+
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+
+            <span>💌 오늘의 추천 문장 컬렉션 미리보기</span>
+
+          </h3>
+
+          <span class="text-xs text-rose-500 font-semibold bg-rose-50 dark:bg-rose-950/60 px-2.5 py-1 rounded-full border border-rose-200 dark:border-rose-900">대표 큐레이션 4선</span>
+
+        </div>
+
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-4">
+
+          힐링 아케이드가 엄선한 대표 명언 및 위로의 문장들입니다. 보관함과 머신에서 더 다양한 메시지를 만나보실 수 있습니다.
+
+        </p>
+
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+         
+
+          <!-- 카드 1 -->
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+
+            <div>
+
+              <div class="flex items-center justify-between mb-2">
+
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">위로 & 쉼</span>
+
+                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #1</span>
+
+              </div>
+
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+
+                "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야."
+
+              </p>
+
+            </div>
+
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요.
+
+            </div>
+
+          </div>
+
+
+
+          <!-- 카드 2 -->
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+
+            <div>
+
+              <div class="flex items-center justify-between mb-2">
+
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">내면의 힘</span>
+
+                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #3</span>
+
+              </div>
+
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+
+                "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔."
+
+              </p>
+
+            </div>
+
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요.
+
+            </div>
+
+          </div>
+
+
+
+          <!-- 카드 3 -->
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+
+            <div>
+
+              <div class="flex items-center justify-between mb-2">
+
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">드라마 명대사</span>
+
+                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 드라마 &lt;미스터 션샤인&gt;</span>
+
+              </div>
+
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+
+                "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아."
+
+              </p>
+
+            </div>
+
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 거울 속 내 눈을 5초간 다정하게 바라보기.
+
+            </div>
+
+          </div>
+
+
+
+          <!-- 카드 4 -->
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+
+            <div>
+
+              <div class="flex items-center justify-between mb-2">
+
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">한국 현대시</span>
+
+                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 도종환, &lt;흔들리며 피는 꽃&gt;</span>
+
+              </div>
+
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+
+                "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니."
+
+              </p>
+
+            </div>
+
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의하기.
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <footer class="w-full max-w-6xl mx-auto px-4 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-medium z-10 space-y-2 border-t border-rose-100/60 dark:border-slate-800 mt-6">
+
+    <div class="flex flex-wrap justify-center gap-4 font-semibold">
+
+      <a href="about.html" class="hover:text-rose-500 transition-colors">서비스 소개 및 이용약관</a>
+
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+
+      <a href="privacy.html" class="hover:text-rose-500 transition-colors">개인정보처리방침</a>
+
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+
+      <a href="contact.html" class="hover:text-rose-500 transition-colors">제휴 및 문의</a>
+
+    </div>
+
+    <p>오늘 하루도 고생 많았어요. 힐링 아케이드에서 따뜻함을 충전하세요 ✨</p>
+
+    <p class="text-[11px] text-slate-400">© 2026 Healing Arcade. All rights reserved. | Contact: contact@healing-arcade.example</p>
+
+  </footer>
+
+
+
+  <!-- ==================== 결과 모달 (캡슐 & 클레인 공용) ==================== -->
+
+  <div id="quoteModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative modal-card-bg">
+
+      <button id="closeModalBtn" aria-label="결과 창 닫기" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+      </button>
+
+
+
+      <div id="modalCapsuleGraphic" class="w-16 h-16 rounded-full mb-4 shadow-lg flex items-center justify-center relative text-2xl">💌</div>
+
+      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/80 text-pink-700 dark:text-pink-200">따뜻한 위로</div>
+
+
+
+      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-serif-quote mb-3 whitespace-pre-line px-2">
+
+        "힘든 날이 있으면 분명 쉬어가는 날도 있는 법이야."
+
+      </p>
+
+      <div id="sourceWrapper" class="text-xs text-amber-600 dark:text-amber-300 font-semibold mb-3 hidden">
+
+        — <span id="quoteSourceText">출처</span>
+
+      </div>
+
+
+
+      <div class="w-full bg-white/90 rounded-2xl p-4 border border-rose-100 dark:border-slate-700 mb-5 text-left sub-card-bg shadow-sm">
+
+        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1.5">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+          <span class="text-xs font-extrabold uppercase tracking-wide">오늘의 미션 / 힐링 팁</span>
+
+        </div>
+
+        <p id="quoteActionPrompt" class="text-xs sm:text-sm text-slate-700 dark:text-slate-100 font-medium leading-relaxed">
+
+          창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="w-full flex gap-2">
+
+        <button id="copyQuoteBtn" aria-label="추천 문구 클립보드 복사하기" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+
+          <span id="copyBtnText">문구 복사하기</span>
+
+        </button>
+
+        <button id="drawAgainBtn" aria-label="다시 뽑기" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl text-xs font-bold shadow-md flex items-center justify-center gap-1.5">
+
+          <span>다시 뽑기</span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==================== 보관함 드로어 ==================== -->
+
+  <div id="drawerOverlay" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div id="drawerPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-5 flex flex-col transform translate-x-full transition-transform duration-300 ease-out drawer-panel-bg">
+
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+
+        <div class="flex items-center gap-2">
+
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+
+          </div>
+
+          <div>
+
+            <h2 class="text-base font-bold text-slate-800 dark:text-slate-100">나의 힐링 보관함</h2>
+
+            <p id="drawerProgressText" class="text-xs text-slate-400">총 0개의 힐링 메시지를 모았어요</p>
+
+          </div>
+
+        </div>
+
+        <button id="closeBoxBtn" aria-label="보관함 닫기" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+        </button>
+
+      </div>
+
+      <div id="collectedList" class="flex-1 overflow-y-auto space-y-3 pr-1 my-3"></div>
+
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+
+        <button id="clearStorageBtn" aria-label="보관함 초기화하기" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">보관함 초기화</button>
+
+        <span class="text-[11px] text-slate-400">브라우저 자동 보관</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- 토스트 알림 -->
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 dark:bg-slate-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1.5 border border-slate-700">
+
+    <span id="toastMessage">알림</span>
+
+  </div>
+
+
+
+  <!-- ==================== 자바스크립트 통합 로직 ==================== -->
+
+  <script>
+
+    /* 데이터베이스 (가챠 & 크레인 공용 통합 DB) */
+
+    const GAW_QUOTES = [
+
+      { id: 1, type: 'gacha', category: "위로 & 쉼", quote: "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야.", prompt: "오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요." },
+
+      { id: 2, type: 'gacha', category: "용기 & 시작", quote: "새로운 시작 앞에서 떨리는 건, 네가 그만큼 진심이기 때문이야.", prompt: "두려움 뒤에 숨어있는 당신의 설렘을 찬찬히 마주해보세요." },
+
+      { id: 3, type: 'gacha', category: "내면의 힘", quote: "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔.", prompt: "과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요." },
+
+      { id: 4, type: 'gacha', category: "성장 & 과정", quote: "꽃마다 피어나는 계절이 다르듯, 너만의 만개할 순간이 다가오고 있어.", prompt: "조급한 마음이 들 때마다 시원한 물 한 잔을 천천히 들이켜보세요." },
+
+      { id: 5, type: 'gacha', category: "따뜻한 응원", quote: "오늘 하루도 버텨낸 당신, 그거 하나만으로도 이미 대단한 일이에요.", prompt: "나 자신에게 '오늘도 참 애썼다'고 소리 내어 말해주세요." },
+
+      { id: 6, type: 'claw', category: "드라마 명대사", quote: "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아.", source: "드라마 <미스터 션샤인>", prompt: "거울 속 내 눈을 5초간 다정하게 바라보며, '나는 존중받아 마땅한 사람이야'라고 소리 내어 말해주기." },
+
+      { id: 7, type: 'claw', category: "영화 명대사", quote: "과거는 아플 수 있어. 하지만 둘 중 하나야. 도망치든가, 아니면 극복하든가.", source: "영화 <라이온 킹>", prompt: "최근 나를 괴롭혔던 과거의 실수 하나를 떠올리고, '그땐 그게 최선이었어'라고 흘려보내기." },
+
+      { id: 8, type: 'claw', category: "한국 현대시", quote: "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니.", source: "도종환, 시 <흔들리며 피는 꽃>", prompt: "지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의해보기." },
+
+      { id: 9, type: 'claw', category: "드라마 명대사", quote: "완벽하지 않아도 괜찮아. 조금 서툴러도 너는 너니까 충분해.", source: "드라마 <눈이 부시게>", prompt: "오늘 완벽하지 못했더라도 '그래도 오늘 시작한 게 어디야!'라며 나를 칭찬해주기." },
+
+      { id: 10, type: 'claw', category: "문학 / 시", quote: "자세히 보아야 예쁘다. 오래 보아야 사랑스럽다. 너도 그렇다.", source: "나태주, 시 <풀꽃>", prompt: "나만의 장점, 혹은 나만의 소소하고 매력적인 버릇 2가지 찾아 메모하기." }
+
+    ];
+
+
+
+    const CAPSULE_PALETTES = [
+
+      { top: "from-pink-400 to-rose-500" }, { top: "from-amber-300 to-yellow-500" },
+
+      { top: "from-sky-400 to-blue-500" }, { top: "from-emerald-300 to-teal-500" },
+
+      { top: "from-purple-400 to-indigo-500" }, { top: "from-orange-400 to-amber-500" }
+
+    ];
+
+
+
+    /* 오디오 신디사이저 */
+
+    class AudioSynth {
+
+      constructor() { this.ctx = null; }
+
+      init() {
+
+        if (!this.ctx) {
+
+          const AC = window.AudioContext || window.webkitAudioContext;
+
+          this.ctx = new AC();
+
+        }
+
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+      }
+
+      playTone(freq, duration, type='sine', vol=0.2) {
+
+        this.init();
+
+        const osc = this.ctx.createOscillator();
+
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+        gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+
+        osc.connect(gain);
+
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+
+        osc.stop(this.ctx.currentTime + duration);
+
+      }
+
+      playCrank() { this.playTone(140, 0.12, 'triangle', 0.3); }
+
+      playDrop() { this.playTone(320, 0.08, 'sine', 0.25); }
+
+      playPop() { [523, 659, 783, 1046].forEach((f, i) => setTimeout(() => this.playTone(f, 0.3, 'sine', 0.2), i * 60)); }
+
+    }
+
+    const sound = new AudioSynth();
+
+
+
+    /* 상태 관리 */
+
+    let currentTab = 'gacha'; // 'gacha' or 'claw'
+
+    let savedCollectedIds = JSON.parse(localStorage.getItem('healing_arcade_collected') || '[]');
+
+    let currentItem = null;
+
+    let currentPalette = null;
+
+
+
+    // DOM 참조
+
+    const tabGacha = document.getElementById('tabGacha');
+
+    const tabClaw = document.getElementById('tabClaw');
+
+    const viewGacha = document.getElementById('viewGacha');
+
+    const viewClaw = document.getElementById('viewClaw');
+
+
+
+    // 탭 전환 로직
+
+    function switchTab(tab) {
+
+      currentTab = tab;
+
+      if (tab === 'gacha') {
+
+        viewGacha.classList.remove('hidden');
+
+        viewClaw.classList.add('hidden');
+
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+
+        populateChamber();
+
+      } else {
+
+        viewGacha.classList.add('hidden');
+
+        viewClaw.classList.remove('hidden');
+
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+
+        initClawBalls();
+
+      }
+
+    }
+
+
+
+    tabGacha.addEventListener('click', () => switchTab('gacha'));
+
+    tabClaw.addEventListener('click', () => switchTab('claw'));
+
+
+
+    /* 다크모드 설정 */
+
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+    const sunIcon = document.getElementById('sunIcon');
+
+    const moonIcon = document.getElementById('moonIcon');
+
+
+
+    function setTheme(isDark) {
+
+      if (isDark) {
+
+        document.body.classList.add('dark-mode');
+
+        document.documentElement.classList.add('dark');
+
+        sunIcon.classList.remove('hidden');
+
+        moonIcon.classList.add('hidden');
+
+        localStorage.setItem('theme', 'dark');
+
+      } else {
+
+        document.body.classList.remove('dark-mode');
+
+        document.documentElement.classList.remove('dark');
+
+        sunIcon.classList.add('hidden');
+
+        moonIcon.classList.remove('hidden');
+
+        localStorage.setItem('theme', 'light');
+
+      }
+
+    }
+
+    themeToggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-mode')));
+
+    if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 머신 1: 캡슐 가챠 로직
+
+     * ----------------------------------------------------------- */
+
+    const chamber = document.getElementById('capsuleChamber');
+
+    const lever = document.getElementById('leverControl');
+
+    const dropSlot = document.getElementById('dropSlot');
+
+    const emptySlotGuide = document.getElementById('emptySlotGuide');
+
+    let isGachaOperating = false;
+
+    let droppedCapsuleElem = null;
+
+    let leverRotation = 0;
+
+
+
+    function populateChamber() {
+
+      chamber.innerHTML = '';
+
+      for (let i = 0; i < 28; i++) {
+
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+
+        const el = document.createElement('div');
+
+        el.className = 'capsule-ball';
+
+        const size = 38 + (i % 5) * 2;
+
+        el.style.width = `${size}px`; el.style.height = `${size}px`;
+
+        const angle = (i / 28) * Math.PI * 2 + (Math.random() * 0.4);
+
+        const radius = 30 + Math.random() * 65;
+
+        const posX = Math.max(15, Math.min(210, 125 + Math.cos(angle) * radius));
+
+        const posY = Math.max(25, Math.min(205, 135 + Math.sin(angle) * (radius * 0.85)));
+
+        el.style.left = `${posX}px`; el.style.top = `${posY}px`;
+
+        el.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+
+        el.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${pal.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50 dark:bg-slate-200"></div><div class="capsule-seam"></div>`;
+
+        chamber.appendChild(el);
+
+      }
+
+    }
+
+
+
+    function operateGacha() {
+
+      if (isGachaOperating) return;
+
+      if (droppedCapsuleElem) {
+
+        showToast("이미 나온 캡슐을 먼저 터치해 열어보세요! ✨");
+
+        return;
+
+      }
+
+      isGachaOperating = true;
+
+      sound.playCrank();
+
+      leverRotation += 360;
+
+      lever.style.transform = `rotate(${leverRotation}deg)`;
+
+
+
+      const capsules = chamber.querySelectorAll('.capsule-ball');
+
+      capsules.forEach(c => c.classList.add('tumbling'));
+
+
+
+      setTimeout(() => {
+
+        capsules.forEach(c => c.classList.remove('tumbling'));
+
+        sound.playDrop();
+
+        emptySlotGuide.style.display = 'none';
+
+
+
+        currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+
+        const gachaItems = GAW_QUOTES.filter(q => q.type === 'gacha');
+
+        currentItem = gachaItems[Math.floor(Math.random() * gachaItems.length)];
+
+
+
+        const capsule = document.createElement('div');
+
+        capsule.className = 'w-12 h-12 rounded-full cursor-pointer capsule-ball animate-drop-bounce pulse-touch relative z-30 flex items-center justify-center';
+
+        capsule.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${currentPalette.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50"></div><div class="capsule-seam"></div><span class="absolute text-xs z-10">✨</span>`;
+
+        capsule.addEventListener('click', openResultModal);
+
+        dropSlot.appendChild(capsule);
+
+        droppedCapsuleElem = capsule;
+
+        isGachaOperating = false;
+
+        showToast("캡슐이 나왔어요! 터치해 열어보세요 🎁");
+
+      }, 700);
+
+    }
+
+    if (lever) lever.addEventListener('click', operateGacha);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 머신 2: UFO 크레인 집게 로직
+
+     * ----------------------------------------------------------- */
+
+    const clawArena = document.getElementById('craneArena');
+
+    const ballField = document.getElementById('ballField');
+
+    const craneTrolley = document.getElementById('craneTrolley');
+
+    const craneWire = document.getElementById('craneWire');
+
+    const clawMech = document.getElementById('clawMechanism');
+
+    const clawBallMount = document.getElementById('clawBallMount');
+
+    const joystickKnob = document.getElementById('joystickKnob');
+
+    const prizeDropPocket = document.getElementById('prizeDropPocket');
+
+    const pocketPlaceholder = document.getElementById('pocketPlaceholder');
+
+    const btnLeft = document.getElementById('btnLeft');
+
+    const btnRight = document.getElementById('btnRight');
+
+    const btnCatch = document.getElementById('btnCatch');
+
+
+
+    let currentX = 180; let isClawBusy = false; let droppedClawPrize = null;
+
+
+
+    function initClawBalls() {
+
+      if (!ballField) return;
+
+      ballField.innerHTML = '';
+
+      const rect = clawArena.getBoundingClientRect();
+
+      const maxRange = Math.floor(rect.width - 50);
+
+      for (let i = 0; i < 22; i++) {
+
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+
+        const ball = document.createElement('div');
+
+        ball.className = `self-ball w-10 h-10 bg-gradient-to-br ${pal.top} border border-white/40 flex items-center justify-center text-[10px] text-white font-bold`;
+
+        ball.style.left = `${95 + Math.random() * (maxRange - 100)}px`;
+
+        ball.style.top = `${215 + Math.random() * 55}px`;
+
+        ball.innerHTML = `♥`;
+
+        ballField.appendChild(ball);
+
+      }
+
+    }
+
+
+
+    function moveCrane(delta) {
+
+      if (isClawBusy) return;
+
+      currentX = Math.max(40, Math.min(280, currentX + delta));
+
+      craneTrolley.style.left = `${currentX}px`;
+
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+
+    }
+
+    let moveInterval = null;
+
+    function startMove(delta) {
+
+      if (isClawBusy) return;
+
+      moveCrane(delta);
+
+      moveInterval = setInterval(() => moveCrane(delta), 90);
+
+      joystickKnob.style.transform = `translateX(${delta > 0 ? 8 : -8}px)`;
+
+    }
+
+    function stopMove() { clearInterval(moveInterval); joystickKnob.style.transform = 'translateX(0px)'; }
+
+
+
+    if (btnLeft) {
+
+      btnLeft.addEventListener('mousedown', () => startMove(-12));
+
+      btnLeft.addEventListener('mouseup', stopMove);
+
+      btnLeft.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(-12); });
+
+      btnLeft.addEventListener('touchend', stopMove);
+
+    }
+
+    if (btnRight) {
+
+      btnRight.addEventListener('mousedown', () => startMove(12));
+
+      btnRight.addEventListener('mouseup', stopMove);
+
+      btnRight.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(12); });
+
+      btnRight.addEventListener('touchend', stopMove);
+
+    }
+
+
+
+    function executeClawCatch() {
+
+      if (isClawBusy) return;
+
+      if (droppedClawPrize) {
+
+        showToast("배출구에 나온 볼을 먼저 열어주세요!");
+
+        return;
+
+      }
+
+      isClawBusy = true;
+
+      btnCatch.classList.add('opacity-50');
+
+
+
+      craneWire.style.height = '180px';
+
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+
+
+
+      setTimeout(() => {
+
+        clawMech.classList.add('claw-closed');
+
+        sound.playTone(220, 0.15, 'triangle', 0.2);
+
+
+
+        const willCatch = currentX > 85 && Math.random() > 0.05;
+
+        if (willCatch) {
+
+          currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+
+          const clawItems = GAW_QUOTES.filter(q => q.type === 'claw');
+
+          currentItem = clawItems[Math.floor(Math.random() * clawItems.length)];
+
+          clawBallMount.innerHTML = `<div class="w-8 h-8 rounded-full bg-gradient-to-br ${currentPalette.top} border border-white/60 shadow-lg flex items-center justify-center text-xs text-white">♥</div>`;
+
+        }
+
+
+
+        setTimeout(() => {
+
+          craneWire.style.height = '24px';
+
+          setTimeout(() => {
+
+            craneTrolley.style.transition = 'left 1s ease';
+
+            craneTrolley.style.left = '45px';
+
+            currentX = 45;
+
+
+
+            setTimeout(() => {
+
+              clawMech.classList.remove('claw-closed');
+
+              sound.playTone(200, 0.15, 'triangle', 0.2);
+
+              clawBallMount.innerHTML = '';
+
+              craneTrolley.style.transition = 'none';
+
+
+
+              if (willCatch) {
+
+                sound.playPop();
+
+                pocketPlaceholder.style.display = 'none';
+
+                const prize = document.createElement('div');
+
+                prize.className = `w-9 h-9 rounded-full bg-gradient-to-br ${currentPalette.top} border-2 border-white shadow-lg cursor-pointer prize-pulse flex items-center justify-center text-xs text-white font-bold`;
+
+                prize.innerHTML = `💌`;
+
+                prize.addEventListener('click', openResultModal);
+
+                prizeDropPocket.innerHTML = '';
+
+                prizeDropPocket.appendChild(prize);
+
+                droppedClawPrize = prize;
+
+                showToast("볼을 뽑았습니다! 터치해 열어보세요 🎁");
+
+              } else {
+
+                showToast("아쉽게 놓쳤어요! 다시 도전해보세요.");
+
+              }
+
+              isClawBusy = false;
+
+              btnCatch.classList.remove('opacity-50');
+
+            }, 1000);
+
+          }, 600);
+
+        }, 400);
+
+      }, 750);
+
+    }
+
+    if (btnCatch) btnCatch.addEventListener('click', executeClawCatch);
+
+
+
+    /* -----------------------------------------------------------
+
+     * 결과 모달 및 보관함 공용 로직
+
+     * ----------------------------------------------------------- */
+
+    const quoteModal = document.getElementById('quoteModal');
+
+    const quoteModalCard = document.getElementById('quoteModalCard');
+
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    const drawAgainBtn = document.getElementById('drawAgainBtn');
+
+    const copyQuoteBtn = document.getElementById('copyQuoteBtn');
+
+    const copyBtnText = document.getElementById('copyBtnText');
+
+    const modalCapsuleGraphic = document.getElementById('modalCapsuleGraphic');
+
+    const quoteCategoryTag = document.getElementById('quoteCategoryTag');
+
+    const quoteMainText = document.getElementById('quoteMainText');
+
+    const quoteActionPrompt = document.getElementById('quoteActionPrompt');
+
+    const sourceWrapper = document.getElementById('sourceWrapper');
+
+    const quoteSourceText = document.getElementById('quoteSourceText');
+
+
+
+    function openResultModal() {
+
+      if (!currentItem) return;
+
+      sound.playPop();
+
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.65 } });
+
+
+
+      if (!savedCollectedIds.includes(currentItem.id)) {
+
+        savedCollectedIds.push(currentItem.id);
+
+        localStorage.setItem('healing_arcade_collected', JSON.stringify(savedCollectedIds));
+
+        updateDrawerUI();
+
+      }
+
+
+
+      quoteCategoryTag.textContent = currentItem.category;
+
+      quoteMainText.textContent = `"${currentItem.quote}"`;
+
+      quoteActionPrompt.textContent = currentItem.prompt;
+
+
+
+      if (currentItem.source) {
+
+        quoteSourceText.textContent = currentItem.source;
+
+        sourceWrapper.classList.remove('hidden');
+
+      } else {
+
+        sourceWrapper.classList.add('hidden');
+
+      }
+
+
+
+      modalCapsuleGraphic.className = `w-16 h-16 rounded-full mb-3 shadow-lg flex items-center justify-center relative bg-gradient-to-br ${currentPalette.top} text-white text-2xl`;
+
+      modalCapsuleGraphic.innerHTML = `💖`;
+
+
+
+      quoteModal.classList.remove('opacity-0', 'pointer-events-none');
+
+      quoteModalCard.classList.remove('scale-90');
+
+      quoteModalCard.classList.add('scale-100');
+
+
+
+      if (droppedCapsuleElem) { droppedCapsuleElem.remove(); droppedCapsuleElem = null; emptySlotGuide.style.display = 'flex'; }
+
+      if (droppedClawPrize) { droppedClawPrize.remove(); droppedClawPrize = null; pocketPlaceholder.style.display = 'inline'; }
+
+    }
+
+
+
+    function closeResultModal() {
+
+      quoteModal.classList.add('opacity-0', 'pointer-events-none');
+
+      quoteModalCard.classList.remove('scale-100');
+
+      quoteModalCard.classList.add('scale-90');
+
+      copyBtnText.textContent = '문구 복사하기';
+
+    }
+
+
+
+    closeModalBtn.addEventListener('click', closeResultModal);
+
+    drawAgainBtn.addEventListener('click', () => {
+
+      closeResultModal();
+
+      setTimeout(() => {
+
+        if (currentTab === 'gacha') operateGacha();
+
+        else executeClawCatch();
+
+      }, 250);
+
+    });
+
+
+
+    copyQuoteBtn.addEventListener('click', () => {
+
+      if (!currentItem) return;
+
+      const text = `[힐링 아케이드]\n"${currentItem.quote}"${currentItem.source ? '\n— ' + currentItem.source : ''}\n\n🌱 ${currentItem.prompt}`;
+
+      navigator.clipboard.writeText(text).then(() => {
+
+        copyBtnText.textContent = '복사 완료! ✨';
+
+        showToast("클립보드에 복사되었습니다!");
+
+        setTimeout(() => copyBtnText.textContent = '문구 복사하기', 1800);
+
+      });
+
+    });
+
+
+
+    /* 보관함 드로어 */
+
+    const openBoxBtn = document.getElementById('openBoxBtn');
+
+    const closeBoxBtn = document.getElementById('closeBoxBtn');
+
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    const drawerPanel = document.getElementById('drawerPanel');
+
+    const collectedList = document.getElementById('collectedList');
+
+    const collectedCountBadge = document.getElementById('collectedCountBadge');
+
+    const drawerProgressText = document.getElementById('drawerProgressText');
+
+    const clearStorageBtn = document.getElementById('clearStorageBtn');
+
+
+
+    function updateDrawerUI() {
+
+      const count = savedCollectedIds.length;
+
+      collectedCountBadge.textContent = count;
+
+      drawerProgressText.textContent = `총 ${count}개의 힐링 메시지를 모았어요`;
+
+
+
+      if (count === 0) {
+
+        collectedList.innerHTML = `<div class="h-64 flex flex-col items-center justify-center text-center text-slate-400"><span class="text-3xl mb-2">🎁</span><p class="text-xs font-semibold">아직 수집된 메시지가 없어요.</p><p class="text-[11px] text-slate-400 mt-1">가챠나 크레인 머신을 즐겨보세요!</p></div>`;
+
+        return;
+
+      }
+
+
+
+      collectedList.innerHTML = '';
+
+      [...savedCollectedIds].reverse().forEach(id => {
+
+        const item = GAW_QUOTES.find(q => q.id === id);
+
+        if (!item) return;
+
+        const card = document.createElement('div');
+
+        card.className = 'bg-rose-50/50 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 text-left sub-card-bg';
+
+        card.innerHTML = `
+
+          <div class="flex items-center justify-between mb-1">
+
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">${item.category}</span>
+
+            ${item.source ? '<span class="text-[10px] text-amber-600 dark:text-amber-300 font-semibold">— ' + item.source + '</span>' : ''}
+
+          </div>
+
+          <p class="text-xs font-bold text-slate-800 dark:text-slate-100 font-serif-quote leading-relaxed mb-1">"${item.quote}"</p>
+
+          <p class="text-[11px] text-slate-500 dark:text-slate-300">🌱 ${item.prompt}</p>
+
+        `;
+
+        collectedList.appendChild(card);
+
+      });
+
+    }
+
+
+
+    openBoxBtn.addEventListener('click', () => { drawerOverlay.classList.remove('opacity-0', 'pointer-events-none'); drawerPanel.classList.remove('translate-x-full'); });
+
+    function closeDrawer() { drawerOverlay.classList.add('opacity-0', 'pointer-events-none'); drawerPanel.classList.add('translate-x-full'); }
+
+    closeBoxBtn.addEventListener('click', closeDrawer);
+
+    drawerOverlay.addEventListener('click', (e) => { if (e.target === drawerOverlay) closeDrawer(); });
+
+
+
+    clearStorageBtn.addEventListener('click', () => {
+
+      if (confirm("보관함을 초기화하시겠습니까?")) {
+
+        savedCollectedIds = [];
+
+        localStorage.removeItem('healing_arcade_collected');
+
+        updateDrawerUI();
+
+        showToast("보관함이 초기화되었습니다.");
+
+      }
+
+    });
+
+
+
+    let toastTimer = null;
+
+    function showToast(msg) {
+
+      const toast = document.getElementById('toast');
+
+      const toastMsg = document.getElementById('toastMessage');
+
+      toastMsg.textContent = msg;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2200);
+
+    }
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      populateChamber();
+
+      updateDrawerUI();
+
+    });
+
+    window.addEventListener('resize', () => { if (currentTab === 'claw') initClawBalls(); });
+
+  </script>
+
+</body>
+
+</html>
+
+문제의 원인은 CSS 로딩 실패와 외부 페이지 링크 구조 두 가지에 있습니다.
+
+핵심 원인 분석
+게임이 안 보이고 글만 보이는 이유 (Tailwind CSS 증발)
+
+기존에 있던 <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>를 지우고 <link rel="stylesheet" href="output.min.css">로 교체하셨습니다.
+
+현재 로컬/서버 경로에 실제로 컴파일된 output.min.css 파일이 없거나 경로가 맞지 않아 모든 Tailwind 스타일(크기, 배치, 색상, flex 등)이 전혀 적용되지 않고 있습니다.
+
+이로 인해 크기(w-64, h-64)나 위치(relative, flex) 속성이 깨져 게임 머신 돔과 레버가 찌그러지거나 사라진 것처럼 보이고, 본문 텍스트만 일반 브라우저 기본 폰트로 길게 나열되는 것입니다.
+
+제휴 문의 클릭 시 이미지가 거대하게 뜨는 이유
+
+상단 버튼 코드가 <a href="contact.html">로 되어 있습니다.
+
+contact.html 파일 내부에서 이미지 태그(<img src="...">)에 너비 제한(max-w-full, w-32 등)이 없거나, contact.html 역시 output.min.css를 불러오지 못해 원본 해상도(예: 2000px 이상) 그대로 화면 전체를 덮어버리는 현상입니다. (또는 링크 대상이 html이 아니라 이미지 파일 자체로 연결되어 있을 때 발생합니다.)
+
+즉시 해결 방법
+로컬에서 Tailwind 빌드 환경(Node.js / PostCSS)을 구축하기 전까지는 기존 CDN 방식으로 즉시 복구해야 디자인과 게임 인터랙션이 정상으로 돌아옵니다.
+
+1. <head> 수정 (index.html)
+<link rel="stylesheet" href="output.min.css">를 제거하고 원래의 Tailwind CDN 스크립트로 되돌립니다.
+
+HTML
+<!-- 변경 전 (문제가 된 부분) -->
+<link rel="stylesheet" href="output.min.css">
+
+<!-- 변경 후 (정상 복구) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+2. contact.html 이미지 크기 제한 수정
+contact.html 파일 안의 이미지 태그에 스타일이 빠져 있다면 아래처럼 CSS 클래스를 명시해 주셔야 이미지가 거대해지지 않습니다.
+
+HTML
+<!-- contact.html 내부의 img 태그 예시 -->
+<img src="your-image.png" alt="문의 안내" class="max-w-md w-full h-auto mx-auto rounded-2xl shadow-md" />
+복구 및 최적화가 완료된 전체 코드
+아래 코드로 교체하시면 게임 머신(가챠, 크레인)이 정상 동작하면서, 추가하셨던 애드센스용 정적 콘텐츠, SEO 메타 태그, 접근성 속성, Disqus 지연 로딩이 모두 깔끔하게 유지됩니다.
+
+HTML
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,7 +4025,1010 @@
   <meta property="og:description" content="하루 한 번, 나만을 위한 따뜻한 한 줄 위로와 마음 미션" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%><text y=%22.9em%22 font-size=%2290%22>💊</text></svg>">
-  <link rel="stylesheet" href="output.min.css">
+  
+  <!-- Tailwind CSS CDN 및 다크모드 설정 복구 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Nanum+Myeongjo:wght@700;800&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .font-serif-quote {
+      font-family: 'Nanum Myeongjo', serif;
+    }
+    .font-hand {
+      font-family: 'Gaegu', cursive, sans-serif;
+    }
+
+    body.dark-mode, html.dark body {
+      background: linear-gradient(to bottom right, #090d16, #141124, #030712) !important;
+      color: #f8fafc !important;
+    }
+    body.dark-mode .glass-dome-container, html.dark .glass-dome-container {
+      background: linear-gradient(to bottom, rgba(30,41,59,0.6), rgba(15,23,42,0.4), rgba(30,41,59,0.8)) !important;
+      border-color: rgba(255,255,255,0.2) !important;
+    }
+    body.dark-mode .modal-card-bg, html.dark .modal-card-bg {
+      background: linear-gradient(to bottom, #1e293b, #0f172a, #020617) !important;
+      border-color: rgba(255,255,255,0.25) !important;
+      color: #f8fafc !important;
+    }
+    body.dark-mode .drawer-panel-bg, html.dark .drawer-panel-bg {
+      background-color: #0f172a !important;
+      color: #f8fafc !important;
+      border-color: rgba(255,255,255,0.15) !important;
+    }
+    body.dark-mode .sub-card-bg, html.dark .sub-card-bg {
+      background-color: rgba(30, 41, 59, 0.95) !important;
+      border-color: rgba(100, 116, 139, 1) !important;
+      color: #f8fafc !important;
+    }
+
+    .capsule-ball, .self-ball {
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: inset -4px -4px 8px rgba(0,0,0,0.35), 
+                  inset 4px 4px 8px rgba(255,255,255,0.7), 
+                  0 6px 12px rgba(0,0,0,0.22);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .capsule-seam {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(0,0,0,0.2);
+      box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+      transform: translateY(-50%);
+    }
+
+    .glass-reflection {
+      background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.25) 100%);
+    }
+    body.dark-mode .glass-reflection, html.dark .glass-reflection {
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.08) 100%);
+    }
+
+    @keyframes tumbleMix {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      20% { transform: translate(-10px, -24px) rotate(45deg) scale(1.05); }
+      40% { transform: translate(12px, -36px) rotate(-60deg) scale(0.95); }
+      60% { transform: translate(-14px, -18px) rotate(90deg) scale(1.03); }
+      80% { transform: translate(8px, -28px) rotate(-40deg) scale(1.01); }
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    }
+    .tumbling {
+      animation: tumbleMix 0.55s ease-in-out infinite alternate;
+    }
+
+    @keyframes dropBounce {
+      0% { transform: translateY(-70px) scale(0.6); opacity: 0; }
+      50% { transform: translateY(10px) scale(1.1); opacity: 1; }
+      70% { transform: translateY(-8px) scale(0.95); }
+      85% { transform: translateY(4px) scale(1.02); }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .animate-drop-bounce {
+      animation: dropBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.6)); }
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px rgba(255, 105, 180, 0.9)); }
+    }
+    .pulse-touch {
+      animation: pulseGlow 1.2s infinite ease-in-out;
+    }
+
+    .claw-arm-left {
+      transform-origin: top right;
+      transition: transform 0.25s ease-in-out;
+    }
+    .claw-arm-right {
+      transform-origin: top left;
+      transition: transform 0.25s ease-in-out;
+    }
+    .claw-closed .claw-arm-left {
+      transform: rotate(26deg);
+    }
+    .claw-closed .claw-arm-right {
+      transform: rotate(-26deg);
+    }
+
+    .neon-border {
+      box-shadow: 0 0 15px rgba(244, 63, 94, 0.4), inset 0 0 15px rgba(244, 63, 94, 0.2);
+    }
+    .neon-light {
+      box-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48;
+    }
+
+    @keyframes prizePulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #fb7185); }
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 16px #f43f5e); }
+    }
+    .prize-pulse {
+      animation: prizePulse 1.1s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-rose-50 to-indigo-100 min-h-screen text-slate-800 dark:text-slate-100 flex flex-col justify-between overflow-x-hidden">
+
+  <!-- 상단 네비게이션 헤더 -->
+  <header class="w-full max-w-6xl mx-auto px-4 pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between z-20 gap-3">
+    <div class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-md shadow-pink-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-base sm:text-lg font-bold bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 dark:from-pink-400 dark:via-rose-400 dark:to-purple-400 bg-clip-text text-transparent">힐링 아케이드</h1>
+        <p class="text-[11px] text-slate-500 dark:text-slate-300 font-medium">따뜻한 위로와 자존감 픽업 머신</p>
+      </div>
+    </div>
+
+    <!-- 머신 선택 탭 버튼들 -->
+    <div class="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 p-1 rounded-2xl border border-rose-200 dark:border-slate-800 shadow-sm">
+      <button id="tabGacha" aria-label="마음 캡슐 뽑기 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs">
+        💊 마음 캡슐 뽑기
+      </button>
+      <button id="tabClaw" aria-label="자존감 픽업 머신 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500">
+        🕹️ 자존감 픽업 머신
+      </button>
+    </div>
+
+    <!-- 우측 액션 버튼들 -->
+    <div class="flex items-center gap-1.5">
+      <button id="themeToggleBtn" aria-label="다크 모드 전환" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 transition-all" title="테마 전환">
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button id="openBoxBtn" aria-label="힐링 보관함 열기" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+        <span>보관함</span>
+        <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+      </button>
+
+      <a href="contact.html" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white shadow-sm text-xs font-semibold" title="제휴 및 협업 문의">
+        <span>제휴 문의</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== 메인 아케이드 & 댓글 섹션 컨테이너 ==================== -->
+  <main class="w-full max-w-6xl mx-auto px-4 py-4 flex-1 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-8 z-10">
+
+    <!-- 좌측: 뽑기 머신 영역 -->
+    <div class="w-full lg:flex-1 flex flex-col items-center justify-center lg:sticky lg:top-4">
+
+      <!-- 게임 뷰 1: 마음 캡슐 뽑기 머신 -->
+      <div id="viewGacha" class="w-full flex flex-col items-center justify-center">
+        <div class="w-full max-w-sm mx-auto px-4 py-2 flex flex-col items-center justify-center relative">
+          <div class="w-full flex flex-col items-center">
+            <!-- 뚜껑 -->
+            <div class="w-56 h-7 bg-gradient-to-b from-rose-500 to-rose-600 rounded-t-3xl shadow-lg border-b-2 border-rose-700/30 flex items-center justify-center relative">
+              <div class="w-16 h-1.5 bg-rose-300/40 rounded-full"></div>
+              <div class="absolute -top-3 w-7 h-7 bg-gradient-to-br from-yellow-300 to-amber-500 rounded-full border-2 border-white shadow-md flex items-center justify-center">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+              </div>
+            </div>
+            <!-- 돔 유리 -->
+            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[48px] bg-gradient-to-b from-sky-50/40 via-white/20 to-sky-100/60 border-4 border-white/80 shadow-[0_15px_35px_rgba(244,114,182,0.25)] relative overflow-hidden backdrop-blur-xs flex items-center justify-center glass-dome-container">
+              <div class="absolute inset-0 glass-reflection pointer-events-none z-20 rounded-[44px]"></div>
+              <div id="capsuleChamber" class="w-full h-full relative z-10 p-2"></div>
+            </div>
+            <!-- 머신 베이스 -->
+            <div class="w-72 sm:w-80 bg-gradient-to-b from-rose-500 via-rose-500 to-rose-600 rounded-3xl shadow-2xl p-4 flex flex-col items-center -mt-4 z-30 border-4 border-rose-400 relative">
+              <div class="w-full flex justify-between items-center px-4 mb-2">
+                <div class="flex items-center gap-1 bg-rose-700/40 px-2.5 py-0.5 rounded-full border border-rose-300/20 text-[11px] text-rose-100 font-medium">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  무한 가챠 가동 중
+                </div>
+                <div class="w-7 h-2 bg-rose-900/60 rounded-full border border-rose-400/40 shadow-inner"></div>
+              </div>
+              <!-- 레버 -->
+              <div class="w-28 h-28 rounded-full bg-gradient-to-br from-rose-700 via-rose-800 to-rose-900 border-4 border-rose-300/60 shadow-[inset_0_4px_8px_rgba(0,0,0,0.6)] flex items-center justify-center relative my-1">
+                <div id="leverControl" class="w-full h-full flex items-center justify-center cursor-pointer transition-transform duration-500 hover:scale-105 active:scale-95 group">
+                  <div class="w-20 h-5 bg-gradient-to-r from-slate-200 via-white to-slate-300 rounded-full shadow-md flex items-center justify-between px-1 border border-slate-300">
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+                    <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-slate-400 via-slate-100 to-slate-400 border-2 border-slate-500 flex items-center justify-center shadow-inner">
+                      <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                    </div>
+                    <div class="w-5 h-5 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 shadow-sm"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1.5 mt-2 text-rose-100 text-xs font-semibold animate-bounce">
+                <span>레버를 탭하거나 클릭하여 돌려보세요!</span>
+              </div>
+              <!-- 배출구 -->
+              <div class="w-48 h-20 bg-rose-950/80 rounded-2xl mt-3 p-1.5 shadow-[inset_0_8px_16px_rgba(0,0,0,0.7)] border-2 border-rose-800 flex items-center justify-center relative overflow-hidden">
+                <div id="dropSlot" class="w-full h-full flex items-center justify-center relative">
+                  <span id="emptySlotGuide" class="text-[11px] text-rose-300/60 font-medium">여기 캡슐이 나와요</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-60 h-3 bg-gradient-to-r from-rose-900 via-rose-800 to-rose-900 rounded-b-xl shadow-lg -mt-0.5"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 게임 뷰 2: 자존감 픽업 머신 -->
+      <div id="viewClaw" class="w-full flex flex-col items-center justify-center hidden">
+        <div class="w-full max-w-md mx-auto px-4 py-2 flex flex-col items-center justify-center">
+          <div class="w-full bg-gradient-to-b from-slate-900 via-rose-950/60 to-slate-900 rounded-3xl border-2 border-rose-500/40 p-3 shadow-2xl neon-border flex flex-col items-center relative">
+            <div class="w-full flex justify-between items-center px-4 py-1.5 mb-2 bg-slate-950/80 rounded-xl border border-rose-500/30">
+              <div class="flex items-center gap-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></div>
+                <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">Self-Esteem Catch</span>
+              </div>
+              <div class="flex gap-1 text-[11px] font-mono text-amber-300">
+                <span>CREDIT:</span>
+                <span class="font-bold">∞ FREE</span>
+              </div>
+            </div>
+
+            <!-- 크레인 아레나 -->
+            <div id="craneArena" class="w-full h-80 rounded-2xl bg-gradient-to-b from-slate-950 via-slate-900 to-indigo-950/70 border border-slate-700/80 relative overflow-hidden shadow-inner">
+              <div class="absolute inset-0 glass-glare pointer-events-none z-30"></div>
+              <div class="absolute top-2 left-3 right-3 h-2 bg-slate-700 rounded-full border border-slate-600 shadow-inner z-10">
+                <div class="w-full h-0.5 bg-rose-400/40 mt-0.5"></div>
+              </div>
+              <!-- 크레인 트롤리 -->
+              <div id="craneTrolley" class="absolute top-1 left-1/2 -translate-x-1/2 z-20 transition-all duration-75 flex flex-col items-center pointer-events-none" style="transform: translateX(-50%);">
+                <div class="w-10 h-3 bg-gradient-to-b from-amber-400 to-amber-600 rounded-md border border-amber-300 shadow"></div>
+                <div id="craneWire" class="w-1 bg-slate-300 h-6 transition-all duration-300 shadow-sm"></div>
+                <div class="w-8 h-6 bg-gradient-to-b from-rose-500 to-rose-700 rounded-t-lg rounded-b-sm border border-rose-300 shadow-md flex items-center justify-center relative">
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-300 border border-white"></div>
+                  <div id="clawBallMount" class="absolute top-7 left-1/2 -translate-x-1/2"></div>
+                </div>
+                <div id="clawMechanism" class="relative w-12 h-6 flex justify-between px-1">
+                  <div class="claw-arm-left w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-right rotate-12"></div>
+                  <div class="w-1 h-3 bg-slate-400 mt-1"></div>
+                  <div class="claw-arm-right w-2.5 h-7 bg-gradient-to-b from-slate-200 to-slate-400 rounded-b-full border border-slate-500 shadow origin-top-left -rotate-12"></div>
+                </div>
+              </div>
+              <!-- 배출구 슈트 -->
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-black via-slate-950 to-slate-900 border-t-2 border-r-2 border-rose-500/40 rounded-tr-3xl z-10 p-1 flex items-center justify-center">
+                <div class="w-full h-full border border-dashed border-rose-400/40 rounded-tr-2xl flex flex-col items-center justify-center text-center p-1 bg-black/40">
+                  <span class="text-[10px] text-rose-300 font-bold">배출구</span>
+                  <span class="text-[9px] text-slate-500">PRIZE EXIT</span>
+                </div>
+              </div>
+              <!-- 볼 필드 -->
+              <div id="ballField" class="absolute inset-0 pointer-events-none z-10"></div>
+            </div>
+
+            <!-- 크레인 컨트롤러 -->
+            <div class="w-full bg-slate-900/90 rounded-2xl p-4 mt-3 border border-slate-700/80 shadow-inner flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <button id="btnLeft" aria-label="왼쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">◀</button>
+                  <div class="flex flex-col items-center px-1">
+                    <div class="w-3 h-8 bg-slate-700 rounded-full flex items-start justify-center p-0.5">
+                      <div id="joystickKnob" class="w-5 h-5 rounded-full bg-rose-500 shadow-md border border-rose-300 transition-transform"></div>
+                    </div>
+                    <span class="text-[10px] text-slate-400 mt-1 font-semibold">이동</span>
+                  </div>
+                  <button id="btnRight" aria-label="오른쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">▶</button>
+                </div>
+                <div class="flex flex-col items-center">
+                  <button id="btnCatch" aria-label="크레인 집게 작동" class="w-24 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 active:scale-95 border-2 border-rose-300 text-white font-extrabold text-sm tracking-wider shadow-lg flex flex-col items-center justify-center neon-light">
+                    <span>GRAB!</span>
+                    <span class="text-[10px] opacity-80 font-normal">볼 집기</span>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full bg-slate-950 rounded-xl p-2.5 border border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                  <span class="text-xs text-slate-300 font-medium">당첨 배출구:</span>
+                </div>
+                <div id="prizeDropPocket" class="h-11 flex-1 flex items-center justify-end px-3">
+                  <span id="pocketPlaceholder" class="text-xs text-slate-500 italic">집게로 볼을 뽑아보세요!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 우측: Disqus 댓글 섹션 -->
+    <section class="w-full lg:w-[460px] xl:w-[500px] shrink-0">
+      <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-5 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
+        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-800 dark:text-slate-100">방문자 한줄평 및 소통 공간</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">따뜻한 응원의 한마디나 의견을 자유롭게 남겨주세요 ✨</p>
+          </div>
+        </div>
+        <div id="disqus_thread"></div>
+        <script>
+          function loadDisqus() {
+            if (window.disqusLoaded) return;
+            window.disqusLoaded = true;
+            var d = document, s = d.createElement('script');
+            s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          }
+          
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  loadDisqus();
+                  observer.disconnect();
+                }
+              });
+            }, { rootMargin: '200px' });
+            observer.observe(document.getElementById('disqus_thread'));
+          } else {
+            loadDisqus();
+          }
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 구글 애드센스 크롤러 친화적 정적 텍스트 콘텐츠 섹션 ==================== -->
+  <section class="w-full max-w-6xl mx-auto px-4 my-8 z-10">
+    <div class="w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
+      
+      <div class="flex items-center gap-2.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-rose-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">힐링 아케이드 스토리 & 마음 처방전</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">일상 속에서 자존감을 충전하고 따뜻한 위로를 얻는 큐레이션 가이드</p>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+        <div>
+          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">🌿 힐링 아케이드가 전하는 마음 처방전</h3>
+          <p class="mb-3">
+            급변하는 현대 사회를 살아가다 보면 때로는 남들과의 비교 속에서 지치고, 스스로의 가치를 잊어버리게 됩니다. '힐링 아케이드'는 그러한 일상 속 현대인들에게 잠시 숨을 고를 수 있는 쉼표를 제공하고자 탄생했습니다. 단순한 재미를 넘어, 마음속 깊은 곳에 따뜻한 위로와 용기를 심어주는 디지털 아케이드 공간입니다. 마음 캡슐 뽑기와 자존감 픽업 머신을 통해 언제 어디서나 손쉽게 긍정의 에너지를 충전하고, 스스로를 더욱 아끼고 사랑하는 법을 되새겨보세요.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">✨ 자존감 충전을 위한 일상 속 작은 실천법</h3>
+          <p class="mb-3">
+            자존감은 거대한 성취에서 오는 것이 아니라, 매일 쌓아 올리는 사소한 마음가짐과 일상 속 작은 실천에서 비롯됩니다. 첫째, 아침에 눈을 떴을 때 거울을 보며 오늘 하루도 수고할 나 자신에게 따뜻한 미소를 지어주세요. 둘째, 부정적인 생각이 밀려올 때는 잠시 멈추고 창밖의 하늘을 올려다보며 깊은 호흡을 세 번 반복해 보세요. 셋째, 완벽하지 않아도 괜찮다는 마음으로 오늘의 작은 시도 자체를 칭찬해 주는 습관을 들여보세요. 이러한 작은 실천들이 모여 당신의 내면을 단단하게 지켜주는 든든한 방패가 되어줍니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span>💌 오늘의 추천 문장 컬렉션 미리보기</span>
+          </h3>
+          <span class="text-xs text-rose-500 font-semibold bg-rose-50 dark:bg-rose-950/60 px-2.5 py-1 rounded-full border border-rose-200 dark:border-rose-900">대표 큐레이션 4선</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-4">
+          힐링 아케이드가 엄선한 대표 명언 및 위로의 문장들입니다. 보관함과 머신에서 더 다양한 메시지를 만나보실 수 있습니다.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">위로 & 쉼</span>
+                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #1</span>
+              </div>
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+                "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야."
+              </p>
+            </div>
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요.
+            </div>
+          </div>
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">내면의 힘</span>
+                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #3</span>
+              </div>
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+                "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔."
+              </p>
+            </div>
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요.
+            </div>
+          </div>
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">드라마 명대사</span>
+                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 드라마 &lt;미스터 션샤인&gt;</span>
+              </div>
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+                "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아."
+              </p>
+            </div>
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 거울 속 내 눈을 5초간 다정하게 바라보기.
+            </div>
+          </div>
+
+          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">한국 현대시</span>
+                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 도종환, &lt;흔들리며 피는 꽃&gt;</span>
+              </div>
+              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
+                "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니."
+              </p>
+            </div>
+            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
+              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의하기.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 푸터 링크 -->
+  <footer class="w-full max-w-6xl mx-auto px-4 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-medium z-10 space-y-2 border-t border-rose-100/60 dark:border-slate-800 mt-6">
+    <div class="flex flex-wrap justify-center gap-4 font-semibold">
+      <a href="about.html" class="hover:text-rose-500 transition-colors">서비스 소개 및 이용약관</a>
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+      <a href="privacy.html" class="hover:text-rose-500 transition-colors">개인정보처리방침</a>
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+      <a href="contact.html" class="hover:text-rose-500 transition-colors">제휴 및 문의</a>
+    </div>
+    <p>오늘 하루도 고생 많았어요. 힐링 아케이드에서 따뜻함을 충전하세요 ✨</p>
+    <p class="text-[11px] text-slate-400">© 2026 Healing Arcade. All rights reserved. | Contact: contact@healing-arcade.example</p>
+  </footer>
+
+  <!-- ==================== 결과 모달 ==================== -->
+  <div id="quoteModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative modal-card-bg">
+      <button id="closeModalBtn" aria-label="결과 창 닫기" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div id="modalCapsuleGraphic" class="w-16 h-16 rounded-full mb-4 shadow-lg flex items-center justify-center relative text-2xl">💌</div>
+      <div id="quoteCategoryTag" class="px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-3 bg-pink-100 dark:bg-pink-900/80 text-pink-700 dark:text-pink-200">따뜻한 위로</div>
+
+      <p id="quoteMainText" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-serif-quote mb-3 whitespace-pre-line px-2">
+        "힘든 날이 있으면 분명 쉬어가는 날도 있는 법이야."
+      </p>
+      <div id="sourceWrapper" class="text-xs text-amber-600 dark:text-amber-300 font-semibold mb-3 hidden">
+        — <span id="quoteSourceText">출처</span>
+      </div>
+
+      <div class="w-full bg-white/90 rounded-2xl p-4 border border-rose-100 dark:border-slate-700 mb-5 text-left sub-card-bg shadow-sm">
+        <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 mb-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span class="text-xs font-extrabold uppercase tracking-wide">오늘의 미션 / 힐링 팁</span>
+        </div>
+        <p id="quoteActionPrompt" class="text-xs sm:text-sm text-slate-700 dark:text-slate-100 font-medium leading-relaxed">
+          창밖의 하늘을 30초 동안 가만히 올려다보고 긴 숨을 한번 내쉬어 보세요.
+        </p>
+      </div>
+
+      <div class="w-full flex gap-2">
+        <button id="copyQuoteBtn" aria-label="추천 문구 클립보드 복사하기" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span id="copyBtnText">문구 복사하기</span>
+        </button>
+        <button id="drawAgainBtn" aria-label="다시 뽑기" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl text-xs font-bold shadow-md flex items-center justify-center gap-1.5">
+          <span>다시 뽑기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 보관함 드로어 ==================== -->
+  <div id="drawerOverlay" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="drawerPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-5 flex flex-col transform translate-x-full transition-transform duration-300 ease-out drawer-panel-bg">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-slate-800 dark:text-slate-100">나의 힐링 보관함</h2>
+            <p id="drawerProgressText" class="text-xs text-slate-400">총 0개의 힐링 메시지를 모았어요</p>
+          </div>
+        </div>
+        <button id="closeBoxBtn" aria-label="보관함 닫기" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="collectedList" class="flex-1 overflow-y-auto space-y-3 pr-1 my-3"></div>
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <button id="clearStorageBtn" aria-label="보관함 초기화하기" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">보관함 초기화</button>
+        <span class="text-[11px] text-slate-400">브라우저 자동 보관</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-800 dark:bg-slate-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1.5 border border-slate-700">
+    <span id="toastMessage">알림</span>
+  </div>
+
+  <!-- 자바스크립트 로직 -->
+  <script>
+    const GAW_QUOTES = [
+      { id: 1, type: 'gacha', category: "위로 & 쉼", quote: "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야.", prompt: "오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요." },
+      { id: 2, type: 'gacha', category: "용기 & 시작", quote: "새로운 시작 앞에서 떨리는 건, 네가 그만큼 진심이기 때문이야.", prompt: "두려움 뒤에 숨어있는 당신의 설렘을 찬찬히 마주해보세요." },
+      { id: 3, type: 'gacha', category: "내면의 힘", quote: "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔.", prompt: "과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요." },
+      { id: 4, type: 'gacha', category: "성장 & 과정", quote: "꽃마다 피어나는 계절이 다르듯, 너만의 만개할 순간이 다가오고 있어.", prompt: "조급한 마음이 들 때마다 시원한 물 한 잔을 천천히 들이켜보세요." },
+      { id: 5, type: 'gacha', category: "따뜻한 응원", quote: "오늘 하루도 버텨낸 당신, 그거 하나만으로도 이미 대단한 일이에요.", prompt: "나 자신에게 '오늘도 참 애썼다'고 소리 내어 말해주세요." },
+      { id: 6, type: 'claw', category: "드라마 명대사", quote: "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아.", source: "드라마 <미스터 션샤인>", prompt: "거울 속 내 눈을 5초간 다정하게 바라보며, '나는 존중받아 마땅한 사람이야'라고 소리 내어 말해주기." },
+      { id: 7, type: 'claw', category: "영화 명대사", quote: "과거는 아플 수 있어. 하지만 둘 중 하나야. 도망치든가, 아니면 극복하든가.", source: "영화 <라이온 킹>", prompt: "최근 나를 괴롭혔던 과거의 실수 하나를 떠올리고, '그땐 그게 최선이었어'라고 흘려보내기." },
+      { id: 8, type: 'claw', category: "한국 현대시", quote: "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니.", source: "도종환, 시 <흔들리며 피는 꽃>", prompt: "지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의해보기." },
+      { id: 9, type: 'claw', category: "드라마 명대사", quote: "완벽하지 않아도 괜찮아. 조금 서툴러도 너는 너니까 충분해.", source: "드라마 <눈이 부시게>", prompt: "오늘 완벽하지 못했더라도 '그래도 오늘 시작한 게 어디야!'라며 나를 칭찬해주기." },
+      { id: 10, type: 'claw', category: "문학 / 시", quote: "자세히 보아야 예쁘다. 오래 보아야 사랑스럽다. 너도 그렇다.", source: "나태주, 시 <풀꽃>", prompt: "나만의 장점, 혹은 나만의 소소하고 매력적인 버릇 2가지 찾아 메모하기." }
+    ];
+
+    const CAPSULE_PALETTES = [
+      { top: "from-pink-400 to-rose-500" }, { top: "from-amber-300 to-yellow-500" },
+      { top: "from-sky-400 to-blue-500" }, { top: "from-emerald-300 to-teal-500" },
+      { top: "from-purple-400 to-indigo-500" }, { top: "from-orange-400 to-amber-500" }
+    ];
+
+    class AudioSynth {
+      constructor() { this.ctx = null; }
+      init() {
+        if (!this.ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AC();
+        }
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+      }
+      playTone(freq, duration, type='sine', vol=0.2) {
+        this.init();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + duration);
+      }
+      playCrank() { this.playTone(140, 0.12, 'triangle', 0.3); }
+      playDrop() { this.playTone(320, 0.08, 'sine', 0.25); }
+      playPop() { [523, 659, 783, 1046].forEach((f, i) => setTimeout(() => this.playTone(f, 0.3, 'sine', 0.2), i * 60)); }
+    }
+    const sound = new AudioSynth();
+
+    let currentTab = 'gacha';
+    let savedCollectedIds = JSON.parse(localStorage.getItem('healing_arcade_collected') || '[]');
+    let currentItem = null;
+    let currentPalette = null;
+
+    const tabGacha = document.getElementById('tabGacha');
+    const tabClaw = document.getElementById('tabClaw');
+    const viewGacha = document.getElementById('viewGacha');
+    const viewClaw = document.getElementById('viewClaw');
+
+    function switchTab(tab) {
+      currentTab = tab;
+      if (tab === 'gacha') {
+        viewGacha.classList.remove('hidden');
+        viewClaw.classList.add('hidden');
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+        populateChamber();
+      } else {
+        viewGacha.classList.add('hidden');
+        viewClaw.classList.remove('hidden');
+        tabClaw.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs";
+        tabGacha.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500";
+        initClawBalls();
+      }
+    }
+
+    tabGacha.addEventListener('click', () => switchTab('gacha'));
+    tabClaw.addEventListener('click', () => switchTab('claw'));
+
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    function setTheme(isDark) {
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+        document.documentElement.classList.add('dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.documentElement.classList.remove('dark');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    themeToggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-mode')));
+    if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+
+    const chamber = document.getElementById('capsuleChamber');
+    const lever = document.getElementById('leverControl');
+    const dropSlot = document.getElementById('dropSlot');
+    const emptySlotGuide = document.getElementById('emptySlotGuide');
+    let isGachaOperating = false;
+    let droppedCapsuleElem = null;
+    let leverRotation = 0;
+
+    function populateChamber() {
+      chamber.innerHTML = '';
+      for (let i = 0; i < 28; i++) {
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+        const el = document.createElement('div');
+        el.className = 'capsule-ball';
+        const size = 38 + (i % 5) * 2;
+        el.style.width = `${size}px`; el.style.height = `${size}px`;
+        const angle = (i / 28) * Math.PI * 2 + (Math.random() * 0.4);
+        const radius = 30 + Math.random() * 65;
+        const posX = Math.max(15, Math.min(210, 125 + Math.cos(angle) * radius));
+        const posY = Math.max(25, Math.min(205, 135 + Math.sin(angle) * (radius * 0.85)));
+        el.style.left = `${posX}px`; el.style.top = `${posY}px`;
+        el.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+        el.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${pal.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50 dark:bg-slate-200"></div><div class="capsule-seam"></div>`;
+        chamber.appendChild(el);
+      }
+    }
+
+    function operateGacha() {
+      if (isGachaOperating) return;
+      if (droppedCapsuleElem) {
+        showToast("이미 나온 캡슐을 먼저 터치해 열어보세요! ✨");
+        return;
+      }
+      isGachaOperating = true;
+      sound.playCrank();
+      leverRotation += 360;
+      lever.style.transform = `rotate(${leverRotation}deg)`;
+
+      const capsules = chamber.querySelectorAll('.capsule-ball');
+      capsules.forEach(c => c.classList.add('tumbling'));
+
+      setTimeout(() => {
+        capsules.forEach(c => c.classList.remove('tumbling'));
+        sound.playDrop();
+        emptySlotGuide.style.display = 'none';
+
+        currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+        const gachaItems = GAW_QUOTES.filter(q => q.type === 'gacha');
+        currentItem = gachaItems[Math.floor(Math.random() * gachaItems.length)];
+
+        const capsule = document.createElement('div');
+        capsule.className = 'w-12 h-12 rounded-full cursor-pointer capsule-ball animate-drop-bounce pulse-touch relative z-30 flex items-center justify-center';
+        capsule.innerHTML = `<div class="w-full h-1/2 rounded-t-full bg-gradient-to-br ${currentPalette.top}"></div><div class="w-full h-1/2 rounded-b-full bg-slate-50"></div><div class="capsule-seam"></div><span class="absolute text-xs z-10">✨</span>`;
+        capsule.addEventListener('click', openResultModal);
+        dropSlot.appendChild(capsule);
+        droppedCapsuleElem = capsule;
+        isGachaOperating = false;
+        showToast("캡슐이 나왔어요! 터치해 열어보세요 🎁");
+      }, 700);
+    }
+    if (lever) lever.addEventListener('click', operateGacha);
+
+    const clawArena = document.getElementById('craneArena');
+    const ballField = document.getElementById('ballField');
+    const craneTrolley = document.getElementById('craneTrolley');
+    const craneWire = document.getElementById('craneWire');
+    const clawMech = document.getElementById('clawMechanism');
+    const clawBallMount = document.getElementById('clawBallMount');
+    const joystickKnob = document.getElementById('joystickKnob');
+    const prizeDropPocket = document.getElementById('prizeDropPocket');
+    const pocketPlaceholder = document.getElementById('pocketPlaceholder');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnRight = document.getElementById('btnRight');
+    const btnCatch = document.getElementById('btnCatch');
+
+    let currentX = 180; let isClawBusy = false; let droppedClawPrize = null;
+
+    function initClawBalls() {
+      if (!ballField) return;
+      ballField.innerHTML = '';
+      const rect = clawArena.getBoundingClientRect();
+      const maxRange = Math.floor(rect.width - 50);
+      for (let i = 0; i < 22; i++) {
+        const pal = CAPSULE_PALETTES[i % CAPSULE_PALETTES.length];
+        const ball = document.createElement('div');
+        ball.className = `self-ball w-10 h-10 bg-gradient-to-br ${pal.top} border border-white/40 flex items-center justify-center text-[10px] text-white font-bold`;
+        ball.style.left = `${95 + Math.random() * (maxRange - 100)}px`;
+        ball.style.top = `${215 + Math.random() * 55}px`;
+        ball.innerHTML = `♥`;
+        ballField.appendChild(ball);
+      }
+    }
+
+    function moveCrane(delta) {
+      if (isClawBusy) return;
+      currentX = Math.max(40, Math.min(280, currentX + delta));
+      craneTrolley.style.left = `${currentX}px`;
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+    }
+    let moveInterval = null;
+    function startMove(delta) {
+      if (isClawBusy) return;
+      moveCrane(delta);
+      moveInterval = setInterval(() => moveCrane(delta), 90);
+      joystickKnob.style.transform = `translateX(${delta > 0 ? 8 : -8}px)`;
+    }
+    function stopMove() { clearInterval(moveInterval); joystickKnob.style.transform = 'translateX(0px)'; }
+
+    if (btnLeft) {
+      btnLeft.addEventListener('mousedown', () => startMove(-12));
+      btnLeft.addEventListener('mouseup', stopMove);
+      btnLeft.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(-12); });
+      btnLeft.addEventListener('touchend', stopMove);
+    }
+    if (btnRight) {
+      btnRight.addEventListener('mousedown', () => startMove(12));
+      btnRight.addEventListener('mouseup', stopMove);
+      btnRight.addEventListener('touchstart', (e) => { e.preventDefault(); startMove(12); });
+      btnRight.addEventListener('touchend', stopMove);
+    }
+
+    function executeClawCatch() {
+      if (isClawBusy) return;
+      if (droppedClawPrize) {
+        showToast("배출구에 나온 볼을 먼저 열어주세요!");
+        return;
+      }
+      isClawBusy = true;
+      btnCatch.classList.add('opacity-50');
+
+      craneWire.style.height = '180px';
+      sound.playTone(160, 0.08, 'sawtooth', 0.03);
+
+      setTimeout(() => {
+        clawMech.classList.add('claw-closed');
+        sound.playTone(220, 0.15, 'triangle', 0.2);
+
+        const willCatch = currentX > 85 && Math.random() > 0.05;
+        if (willCatch) {
+          currentPalette = CAPSULE_PALETTES[Math.floor(Math.random() * CAPSULE_PALETTES.length)];
+          const clawItems = GAW_QUOTES.filter(q => q.type === 'claw');
+          currentItem = clawItems[Math.floor(Math.random() * clawItems.length)];
+          clawBallMount.innerHTML = `<div class="w-8 h-8 rounded-full bg-gradient-to-br ${currentPalette.top} border border-white/60 shadow-lg flex items-center justify-center text-xs text-white">♥</div>`;
+        }
+
+        setTimeout(() => {
+          craneWire.style.height = '24px';
+          setTimeout(() => {
+            craneTrolley.style.transition = 'left 1s ease';
+            craneTrolley.style.left = '45px';
+            currentX = 45;
+
+            setTimeout(() => {
+              clawMech.classList.remove('claw-closed');
+              sound.playTone(200, 0.15, 'triangle', 0.2);
+              clawBallMount.innerHTML = '';
+              craneTrolley.style.transition = 'none';
+
+              if (willCatch) {
+                sound.playPop();
+                pocketPlaceholder.style.display = 'none';
+                const prize = document.createElement('div');
+                prize.className = `w-9 h-9 rounded-full bg-gradient-to-br ${currentPalette.top} border-2 border-white shadow-lg cursor-pointer prize-pulse flex items-center justify-center text-xs text-white font-bold`;
+                prize.innerHTML = `💌`;
+                prize.addEventListener('click', openResultModal);
+                prizeDropPocket.innerHTML = '';
+                prizeDropPocket.appendChild(prize);
+                droppedClawPrize = prize;
+                showToast("볼을 뽑았습니다! 터치해 열어보세요 🎁");
+              } else {
+                showToast("아쉽게 놓쳤어요! 다시 도전해보세요.");
+              }
+              isClawBusy = false;
+              btnCatch.classList.remove('opacity-50');
+            }, 1000);
+          }, 600);
+        }, 400);
+      }, 750);
+    }
+    if (btnCatch) btnCatch.addEventListener('click', executeClawCatch);
+
+    const quoteModal = document.getElementById('quoteModal');
+    const quoteModalCard = document.getElementById('quoteModalCard');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const drawAgainBtn = document.getElementById('drawAgainBtn');
+    const copyQuoteBtn = document.getElementById('copyQuoteBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    const modalCapsuleGraphic = document.getElementById('modalCapsuleGraphic');
+    const quoteCategoryTag = document.getElementById('quoteCategoryTag');
+    const quoteMainText = document.getElementById('quoteMainText');
+    const quoteActionPrompt = document.getElementById('quoteActionPrompt');
+    const sourceWrapper = document.getElementById('sourceWrapper');
+    const quoteSourceText = document.getElementById('quoteSourceText');
+
+    function openResultModal() {
+      if (!currentItem) return;
+      sound.playPop();
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.65 } });
+
+      if (!savedCollectedIds.includes(currentItem.id)) {
+        savedCollectedIds.push(currentItem.id);
+        localStorage.setItem('healing_arcade_collected', JSON.stringify(savedCollectedIds));
+        updateDrawerUI();
+      }
+
+      quoteCategoryTag.textContent = currentItem.category;
+      quoteMainText.textContent = `"${currentItem.quote}"`;
+      quoteActionPrompt.textContent = currentItem.prompt;
+
+      if (currentItem.source) {
+        quoteSourceText.textContent = currentItem.source;
+        sourceWrapper.classList.remove('hidden');
+      } else {
+        sourceWrapper.classList.add('hidden');
+      }
+
+      modalCapsuleGraphic.className = `w-16 h-16 rounded-full mb-3 shadow-lg flex items-center justify-center relative bg-gradient-to-br ${currentPalette.top} text-white text-2xl`;
+      modalCapsuleGraphic.innerHTML = `💖`;
+
+      quoteModal.classList.remove('opacity-0', 'pointer-events-none');
+      quoteModalCard.classList.remove('scale-90');
+      quoteModalCard.classList.add('scale-100');
+
+      if (droppedCapsuleElem) { droppedCapsuleElem.remove(); droppedCapsuleElem = null; emptySlotGuide.style.display = 'flex'; }
+      if (droppedClawPrize) { droppedClawPrize.remove(); droppedClawPrize = null; pocketPlaceholder.style.display = 'inline'; }
+    }
+
+    function closeResultModal() {
+      quoteModal.classList.add('opacity-0', 'pointer-events-none');
+      quoteModalCard.classList.remove('scale-100');
+      quoteModalCard.classList.add('scale-90');
+      copyBtnText.textContent = '문구 복사하기';
+    }
+
+    closeModalBtn.addEventListener('click', closeResultModal);
+    drawAgainBtn.addEventListener('click', () => {
+      closeResultModal();
+      setTimeout(() => {
+        if (currentTab === 'gacha') operateGacha();
+        else executeClawCatch();
+      }, 250);
+    });
+
+    copyQuoteBtn.addEventListener('click', () => {
+      if (!currentItem) return;
+      const text = `[힐링 아케이드]\n"${currentItem.quote}"${currentItem.source ? '\n— ' + currentItem.source : ''}\n\n🌱 ${currentItem.prompt}`;
+      navigator.clipboard.writeText(text).then(() => {
+        copyBtnText.textContent = '복사 완료! ✨';
+        showToast("클립보드에 복사되었습니다!");
+        setTimeout(() => copyBtnText.textContent = '문구 복사하기', 1800);
+      });
+    });
+
+    const openBoxBtn = document.getElementById('openBoxBtn');
+    const closeBoxBtn = document.getElementById('closeBoxBtn');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerPanel = document.getElementById('drawerPanel');
+    const collectedList = document.getElementById('collectedList');
+    const collectedCountBadge = document.getElementById('collectedCountBadge');
+    const drawerProgressText = document.getElementById('drawerProgressText');
+    const clearStorageBtn = document.getElementById('clearStorageBtn');
+
+    function updateDrawerUI() {
+      const count = savedCollectedIds.length;
+      collectedCountBadge.textContent = count;
+      drawerProgressText.textContent = `총 ${count}개의 힐링 메시지를 모았어요`;
+
+      if (count === 0) {
+        collectedList.innerHTML = `<div class="h-64 flex flex-col items-center justify-center text-center text-slate-400"><span class="text-3xl mb-2">🎁</span><p class="text-xs font-semibold">아직 수집된 메시지가 없어요.</p><p class="text-[11px] text-slate-400 mt-1">가챠나 크레인 머신을 즐겨보세요!</p></div>`;
+        return;
+      }
+
+      collectedList.innerHTML = '';
+      [...savedCollectedIds].reverse().forEach(id => {
+        const item = GAW_QUOTES.find(q => q.id === id);
+        if (!item) return;
+        const card = document.createElement('div');
+        card.className = 'bg-rose-50/50 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-3.5 text-left sub-card-bg';
+        card.innerHTML = `
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">${item.category}</span>
+            ${item.source ? '<span class="text-[10px] text-amber-600 dark:text-amber-300 font-semibold">— ' + item.source + '</span>' : ''}
+          </div>
+          <p class="text-xs font-bold text-slate-800 dark:text-slate-100 font-serif-quote leading-relaxed mb-1">"${item.quote}"</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-300">🌱 ${item.prompt}</p>
+        `;
+        collectedList.appendChild(card);
+      });
+    }
+
+    openBoxBtn.addEventListener('click', () => { drawerOverlay.classList.remove('opacity-0', 'pointer-events-none'); drawerPanel.classList.remove('translate-x-full'); });
+    function closeDrawer() { drawerOverlay.classList.add('opacity-0', 'pointer-events-none'); drawerPanel.classList.add('translate-x-full'); }
+    closeBoxBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', (e) => { if (e.target === drawerOverlay) closeDrawer(); });
+
+    clearStorageBtn.addEventListener('click', () => {
+      if (confirm("보관함을 초기화하시겠습니까?")) {
+        savedCollectedIds = [];
+        localStorage.removeItem('healing_arcade_collected');
+        updateDrawerUI();
+        showToast("보관함이 초기화되었습니다.");
+      }
+    });
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2200);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      populateChamber();
+      updateDrawerUI();
+    });
+    window.addEventListener('resize', () => { if (currentTab === 'claw') initClawBalls(); });
+  </script>
+</body>
+</html>
+제안해준 1~4번 모두 코드 수정했는데 되돌리고 싶어. 어떻게 해야하지?
+
+가장 처음에 보여주셨던 1~4번 수정 이전의 깔끔한 원본 상태로 완벽하게 되돌려 드립니다.
+
+아래 코드로 전체를 덮어씌우시면 추가되었던 SEO 태그, 정적 아티클 글귀, 복잡해진 푸터, IntersectionObserver 스크립트가 모두 제거되고 원래의 가챠/크레인 게임 화면으로 복구됩니다.
+
+HTML
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>힐링 아케이드 | 마음 캡슐 & 자존감 픽업 머신</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Nanum+Myeongjo:wght@700;800&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
@@ -167,22 +5185,22 @@
 
     <!-- 머신 선택 탭 버튼들 -->
     <div class="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 p-1 rounded-2xl border border-rose-200 dark:border-slate-800 shadow-sm">
-      <button id="tabGacha" aria-label="마음 캡슐 뽑기 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs">
+      <button id="tabGacha" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xs">
         💊 마음 캡슐 뽑기
       </button>
-      <button id="tabClaw" aria-label="자존감 픽업 머신 탭으로 전환" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500">
+      <button id="tabClaw" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-rose-500">
         🕹️ 자존감 픽업 머신
       </button>
     </div>
 
     <!-- 우측 액션 버튼들 (다크모드 + 보관함 + 제휴 문의) -->
     <div class="flex items-center gap-1.5">
-      <button id="themeToggleBtn" aria-label="다크 모드 전환" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 transition-all" title="테마 전환">
+      <button id="themeToggleBtn" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 transition-all" title="테마 전환">
         <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
         <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
 
-      <button id="openBoxBtn" aria-label="힐링 보관함 열기" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300">
+      <button id="openBoxBtn" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-xs font-semibold text-rose-700 dark:text-rose-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
         <span>보관함</span>
         <span id="collectedCountBadge" class="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
@@ -302,17 +5320,17 @@
             <div class="w-full bg-slate-900/90 rounded-2xl p-4 mt-3 border border-slate-700/80 shadow-inner flex flex-col gap-3">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                  <button id="btnLeft" aria-label="왼쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">◀</button>
+                  <button id="btnLeft" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">◀</button>
                   <div class="flex flex-col items-center px-1">
                     <div class="w-3 h-8 bg-slate-700 rounded-full flex items-start justify-center p-0.5">
                       <div id="joystickKnob" class="w-5 h-5 rounded-full bg-rose-500 shadow-md border border-rose-300 transition-transform"></div>
                     </div>
                     <span class="text-[10px] text-slate-400 mt-1 font-semibold">이동</span>
                   </div>
-                  <button id="btnRight" aria-label="오른쪽으로 크레인 이동" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">▶</button>
+                  <button id="btnRight" class="w-14 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-600 text-rose-400 font-bold text-lg shadow-md active:scale-95 transition-all">▶</button>
                 </div>
                 <div class="flex flex-col items-center">
-                  <button id="btnCatch" aria-label="크레인 집게 작동 (볼 집기)" class="w-24 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 active:scale-95 border-2 border-rose-300 text-white font-extrabold text-sm tracking-wider shadow-lg flex flex-col items-center justify-center neon-light">
+                  <button id="btnCatch" class="w-24 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 active:scale-95 border-2 border-rose-300 text-white font-extrabold text-sm tracking-wider shadow-lg flex flex-col items-center justify-center neon-light">
                     <span>GRAB!</span>
                     <span class="text-[10px] opacity-80 font-normal">볼 집기</span>
                   </button>
@@ -348,28 +5366,12 @@
         </div>
         <div id="disqus_thread"></div>
         <script>
-          function loadDisqus() {
-            if (window.disqusLoaded) return;
-            window.disqusLoaded = true;
+            (function() {
             var d = document, s = d.createElement('script');
             s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
-          }
-          
-          if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, observer) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  loadDisqus();
-                  observer.disconnect();
-                }
-              });
-            }, { rootMargin: '200px' });
-            observer.observe(document.getElementById('disqus_thread'));
-          } else {
-            loadDisqus();
-          }
+            })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
@@ -377,143 +5379,14 @@
 
   </main>
 
-  <!-- ==================== 구글 애드센스 크롤러 친화적 정적 텍스트 콘텐츠 섹션 ==================== -->
-  <section class="w-full max-w-6xl mx-auto px-4 my-8 z-10">
-    <div class="w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 dark:border-slate-800 modal-card-bg">
-      
-      <!-- 섹션 헤더 -->
-      <div class="flex items-center gap-2.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-rose-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
-        </div>
-        <div>
-          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">힐링 아케이드 스토리 & 마음 처방전</h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">일상 속에서 자존감을 충전하고 따뜻한 위로를 얻는 큐레이션 가이드</p>
-        </div>
-      </div>
-
-      <!-- 본문 아티클 (500~1000자 분량의 정적 텍스트) -->
-      <div class="space-y-6 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-        
-        <div>
-          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">🌿 힐링 아케이드가 전하는 마음 처방전</h3>
-          <p class="mb-3">
-            급변하는 현대 사회를 살아가다 보면 때로는 남들과의 비교 속에서 지치고, 스스로의 가치를 잊어버리게 됩니다. '힐링 아케이드'는 그러한 일상 속 현대인들에게 잠시 숨을 고를 수 있는 쉼표를 제공하고자 탄생했습니다. 단순한 재미를 넘어, 마음속 깊은 곳에 따뜻한 위로와 용기를 심어주는 디지털 아케이드 공간입니다. 마음 캡슐 뽑기와 자존감 픽업 머신을 통해 언제 어디서나 손쉽게 긍정의 에너지를 충전하고, 스스로를 더욱 아끼고 사랑하는 법을 되새겨보세요.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-base sm:text-lg font-bold text-rose-600 dark:text-rose-400 mb-2">✨ 자존감 충전을 위한 일상 속 작은 실천법</h3>
-          <p class="mb-3">
-            자존감은 거대한 성취에서 오는 것이 아니라, 매일 쌓아 올리는 사소한 마음가짐과 일상 속 작은 실천에서 비롯됩니다. 첫째, 아침에 눈을 떴을 때 거울을 보며 오늘 하루도 수고할 나 자신에게 따뜻한 미소를 지어주세요. 둘째, 부정적인 생각이 밀려올 때는 잠시 멈추고 창밖의 하늘을 올려다보며 깊은 호흡을 세 번 반복해 보세요. 셋째, 완벽하지 않아도 괜찮다는 마음으로 오늘의 작은 시도 자체를 칭찬해 주는 습관을 들여보세요. 이러한 작은 실천들이 모여 당신의 내면을 단단하게 지켜주는 든든한 방패가 되어줍니다.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 오늘의 추천 문장 컬렉션 미리보기 (정적 리스트) -->
-      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span>💌 오늘의 추천 문장 컬렉션 미리보기</span>
-          </h3>
-          <span class="text-xs text-rose-500 font-semibold bg-rose-50 dark:bg-rose-950/60 px-2.5 py-1 rounded-full border border-rose-200 dark:border-rose-900">대표 큐레이션 4선</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-4">
-          힐링 아케이드가 엄선한 대표 명언 및 위로의 문장들입니다. 보관함과 머신에서 더 다양한 메시지를 만나보실 수 있습니다.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          
-          <!-- 카드 1 -->
-          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">위로 & 쉼</span>
-                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #1</span>
-              </div>
-              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
-                "지금 네가 걷고 있는 속도가 세상에서 가장 알맞은 속도야."
-              </p>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
-              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 오늘 하루만큼은 남과 비교하지 말고 나만의 리듬을 지켜주세요.
-            </div>
-          </div>
-
-          <!-- 카드 2 -->
-          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">내면의 힘</span>
-                <span class="text-[11px] text-slate-400 font-medium">마음 캡슐 #3</span>
-              </div>
-              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
-                "너는 네 생각보다 훨씬 단단하고, 네가 겪은 밤보다 훨씬 눈부셔."
-              </p>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
-              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 과거에 내가 극복해 냈던 작지만 강한 순간을 떠올려보세요.
-            </div>
-          </div>
-
-          <!-- 카드 3 -->
-          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">드라마 명대사</span>
-                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 드라마 &lt;미스터 션샤인&gt;</span>
-              </div>
-              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
-                "네가 너를 귀하게 여기지 않으면 세상 그 누구도 너를 귀하게 여기지 않아."
-              </p>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
-              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 거울 속 내 눈을 5초간 다정하게 바라보기.
-            </div>
-          </div>
-
-          <!-- 카드 4 -->
-          <div class="bg-rose-50/60 dark:bg-slate-800/80 border border-rose-100 dark:border-slate-700 rounded-2xl p-4 flex flex-col justify-between sub-card-bg">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-slate-700">한국 현대시</span>
-                <span class="text-[11px] text-amber-600 dark:text-amber-300 font-semibold">— 도종환, &lt;흔들리며 피는 꽃&gt;</span>
-              </div>
-              <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-serif-quote leading-snug mb-2">
-                "흔들리지 않고 피는 꽃이 어디 있으랴. 이 세상 그 어떤 아름다운 꽃들도 다 흔들리면서 피었나니."
-              </p>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-rose-100/60 dark:border-slate-700/60">
-              <span class="font-bold text-rose-500">🌱 힐링 팁:</span> 지금 겪고 있는 고민을 '더 단단히 피어나기 위한 바람'으로 재정의하기.
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="w-full max-w-6xl mx-auto px-4 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-medium z-10 space-y-2 border-t border-rose-100/60 dark:border-slate-800 mt-6">
-    <div class="flex flex-wrap justify-center gap-4 font-semibold">
-      <a href="about.html" class="hover:text-rose-500 transition-colors">서비스 소개 및 이용약관</a>
-      <span class="text-slate-300 dark:text-slate-700">|</span>
-      <a href="privacy.html" class="hover:text-rose-500 transition-colors">개인정보처리방침</a>
-      <span class="text-slate-300 dark:text-slate-700">|</span>
-      <a href="contact.html" class="hover:text-rose-500 transition-colors">제휴 및 문의</a>
-    </div>
-    <p>오늘 하루도 고생 많았어요. 힐링 아케이드에서 따뜻함을 충전하세요 ✨</p>
-    <p class="text-[11px] text-slate-400">© 2026 Healing Arcade. All rights reserved. | Contact: contact@healing-arcade.example</p>
+  <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-300 font-medium z-10">
+    오늘 하루도 고생 많았어요. 힐링 아케이드에서 따뜻함을 충전하세요 ✨
   </footer>
 
   <!-- ==================== 결과 모달 (캡슐 & 클레인 공용) ==================== -->
   <div id="quoteModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
     <div id="quoteModalCard" class="w-full max-w-sm bg-gradient-to-b from-white via-rose-50/30 to-amber-50/50 rounded-3xl p-6 shadow-2xl border border-rose-100 flex flex-col items-center text-center transform scale-90 transition-transform duration-300 relative modal-card-bg">
-      <button id="closeModalBtn" aria-label="결과 창 닫기" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-full">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
 
@@ -538,11 +5411,11 @@
       </div>
 
       <div class="w-full flex gap-2">
-        <button id="copyQuoteBtn" aria-label="추천 문구 클립보드 복사하기" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5">
+        <button id="copyQuoteBtn" class="flex-1 py-2.5 px-3 bg-rose-50 hover:bg-rose-100 dark:bg-slate-800 border border-rose-200 dark:border-slate-700 text-rose-700 dark:text-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span id="copyBtnText">문구 복사하기</span>
         </button>
-        <button id="drawAgainBtn" aria-label="다시 뽑기" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl text-xs font-bold shadow-md flex items-center justify-center gap-1.5">
+        <button id="drawAgainBtn" class="flex-1 py-2.5 px-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl text-xs font-bold shadow-md flex items-center justify-center gap-1.5">
           <span>다시 뽑기</span>
         </button>
       </div>
@@ -562,13 +5435,13 @@
             <p id="drawerProgressText" class="text-xs text-slate-400">총 0개의 힐링 메시지를 모았어요</p>
           </div>
         </div>
-        <button id="closeBoxBtn" aria-label="보관함 닫기" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+        <button id="closeBoxBtn" class="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
       <div id="collectedList" class="flex-1 overflow-y-auto space-y-3 pr-1 my-3"></div>
       <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-        <button id="clearStorageBtn" aria-label="보관함 초기화하기" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">보관함 초기화</button>
+        <button id="clearStorageBtn" class="text-xs text-slate-400 hover:text-rose-500 underline font-medium">보관함 초기화</button>
         <span class="text-[11px] text-slate-400">브라우저 자동 보관</span>
       </div>
     </div>
@@ -1018,3 +5891,8 @@
   </script>
 </body>
 </html>
+
+
+
+Gemini는 AI이며 인물 등에 관한 정보 제공 시 실수를 할 수 있습니다. 개인 정보 보호 및 Gemini새 창에서 열기
+
