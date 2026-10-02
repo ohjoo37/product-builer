@@ -4,12 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>제휴 및 협업 문의 | 마음 캡슐 뽑기 머신</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-    }
-  </script>
+  <link rel="stylesheet" href="output.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
@@ -56,7 +51,7 @@
     </a>
 
     <!-- 테마 토글 -->
-    <button id="themeToggleBtn" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 hover:shadow transition-all active:scale-95" title="테마 전환">
+    <button id="themeToggleBtn" aria-label="다크 모드 전환" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-rose-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-amber-300 hover:shadow transition-all active:scale-95" title="테마 전환">
       <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
@@ -94,7 +89,7 @@
           <a href="index.html" class="px-5 py-2.5 bg-rose-500 hover:bg-rose-600 text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95">
             메인으로 돌아가기
           </a>
-          <button id="resetFormBtn" class="px-5 py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl text-xs sm:text-sm font-semibold transition-all">
+          <button id="resetFormBtn" aria-label="새 문의 작성하기" class="px-5 py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl text-xs sm:text-sm font-semibold transition-all">
             새 문의 작성하기
           </button>
         </div>
@@ -173,7 +168,7 @@
         <div id="partnerErrorBox" class="hidden p-3.5 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900 text-xs sm:text-sm text-rose-600 dark:text-rose-300 font-medium"></div>
 
         <div class="pt-2">
-          <button type="submit" id="partnerSubmitBtn"
+          <button type="submit" id="partnerSubmitBtn" aria-label="제휴 문의 제출하기"
             class="w-full py-3.5 px-6 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-sm sm:text-base rounded-2xl shadow-lg shadow-rose-200 dark:shadow-none flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
             <span>제휴 문의 제출하기</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -214,20 +209,43 @@
       <!-- Disqus Embed -->
       <div id="disqus_thread"></div>
       <script>
-          (function() {
+        function loadDisqus() {
+          if (window.disqusLoaded) return;
+          window.disqusLoaded = true;
           var d = document, s = d.createElement('script');
           s.src = 'https://productbuilder-l6ecimvfz1.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date());
           (d.head || d.body).appendChild(s);
-          })();
+        }
+        
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                loadDisqus();
+                observer.disconnect();
+              }
+            });
+          }, { rootMargin: '200px' });
+          observer.observe(document.getElementById('disqus_thread'));
+        } else {
+          loadDisqus();
+        }
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
   </section>
 
   <!-- 푸터 -->
-  <footer class="w-full text-center py-4 text-xs text-slate-500 dark:text-slate-400 font-medium">
-    <p>© 마음 캡슐 뽑기 머신. Powered by Formspree.</p>
+  <footer class="w-full max-w-xl mx-auto px-4 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-medium space-y-2 border-t border-rose-100/60 dark:border-slate-800 mt-6">
+    <div class="flex flex-wrap justify-center gap-4 font-semibold">
+      <a href="about.html" class="hover:text-rose-500 transition-colors">서비스 소개 및 이용약관</a>
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+      <a href="privacy.html" class="hover:text-rose-500 transition-colors">개인정보처리방침</a>
+      <span class="text-slate-300 dark:text-slate-700">|</span>
+      <a href="contact.html" class="hover:text-rose-500 transition-colors">제휴 및 문의</a>
+    </div>
+    <p>© 2026 힐링 아케이드. All rights reserved. | Contact: contact@healing-arcade.example</p>
   </footer>
 
   <!-- 스크립트 -->

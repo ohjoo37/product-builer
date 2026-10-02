@@ -1,0 +1,25 @@
+{
+  "name": "codespaces-blank",
+  "version": "1.0.0",
+  "description": "나만의 가치를 건져 올리는 인터랙티브 아케이드 스타일의 웹 기반 크레인 집게 머신 웹앱입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ohjoo37/product-builer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ohjoo37/product-builer/issues"
+  },
+  "homepage": "https://github.com/ohjoo37/product-builer#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
